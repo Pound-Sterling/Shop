@@ -1,0 +1,145 @@
+.mySlides {
+  margin: auto;
+}
+.mySlides img::selection {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.slider-control {
+  display: flex;
+  justify-content: center;
+}
+
+.prev,
+.next {
+  color: #292929;
+  font-size: 28px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  display: block;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 30px 20px;
+  transition: 0.2s;
+  border: 1px solid #292929;
+}
+.prev:hover,
+.next:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 35px 20px;
+}
+.prev:active,
+.next:active {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 32px 20px;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 0.3s;
+  animation-name: fade;
+  animation-duration: 0.3s;
+}
+@-webkit-keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .prev,
+  .next {
+    font-size: 22px;
+  }
+  .prev:hover,
+  .next:hover {
+    padding: 30px 20px;
+  }
+  .prev:active,
+  .next:active {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 33px 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .prev,
+  .next {
+    font-size: 16px;
+  }
+  .prev:hover,
+  .next:hover {
+    color: white;
+    padding: 28px 20px;
+  }
+  .prev:active,
+  .next:active {
+    padding: 31px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .prev,
+  .next {
+    font-size: 16px;
+    padding: 15px 15px;
+    border: none;
+    outline: 1px solid #292929;
+    position: relative;
+  }
+  .prev:hover,
+  .next:hover {
+    color: white;
+    padding: 18px 15px;
+  }
+  .prev:active,
+  .next:active {
+    padding: 16px 15px;
+  }
+  .prev {
+    right: 5px;
+  }
+  .next {
+    left: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .prev,
+  .next {
+    outline: none;
+  }
+  .prev:hover,
+  .next:hover {
+    color: white;
+    padding: 17px 15px;
+  }
+  .prev:active,
+  .next:active {
+    padding: 16px 15px;
+  }
+  .prev {
+    right: 5px;
+  }
+  .next {
+    left: 5px;
+  }
+}

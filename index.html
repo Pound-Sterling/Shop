@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Раскраски по номерам</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel=" stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/timer.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/Ssl.css">
+    <link rel="stylesheet" href="css/popup.css">
+</head>
+
+<body class="preload">
+
+    <header class="header lock-padding" id="header">
+        <div class="container">
+
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="">
+                        <img src="images/logo.png" alt="Раскраски Украина">
+                    </a>
+                </div>
+                <div class="header__burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="header__menu">
+
+                    <ul class="header__list">
+
+                        <li>
+                            <a class="header__link" href="#bonus">
+                                <nobr>Акции</nobr>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="header__link" href="#up">
+                                <nobr>О товаре</nobr>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="header__link" href="#us">
+                                <nobr>О нас</nobr>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="header__link" href="#catalog">
+                                <nobr>Каталог</nobr>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="header__link" href="#buy">
+                                <nobr>Заказать</nobr>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div class="header__btns">
+
+                    <a href="#myCall" class="popup-link"><span class="icon-phone"></span>Заказать звонок</a>
+                    <a href="#myModal" class="popup-link btn-cart">
+                        <span class="icon-cart"></span>
+                        <span id="count-goods">0</span>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="start-background ">
+    </div>
+
+    <main class="main">
+
+        <section class="bonus" id="bonus">
+            <div class="container">
+                <div class="bonus-container">
+                    <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                    <div class="bonus-container-wrapper">
+                        <div class="mySlides fade bonus-item">
+
+                            <div class="bonus-title">
+                                <div class="bonus-title-wrapper">
+
+                                    <div class="bonus-text">
+                                        <span class="bonus-span2_v1">
+                                            Акция!
+                                            <span>Н</span><span class="bsl">а каждую
+                                            </span>
+                                        </span>
+                                        <span class="bonus-span2_v2">
+                                            третью <span class="bsl">раскарску</span>
+                                        </span>
+                                        <span class="bonus-span2_v3">
+                                            скидка 30%
+                                        </span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div id="countdown1" class="countdown">
+                                <div class="countdown-number">
+                                    <span class="days countdown-time"></span>
+                                    <span class="countdown-text">Дней</span>
+                                </div>
+                                <div class="countdown-number">
+                                    <span class="hours countdown-time"></span>
+                                    <span class="countdown-text">Часов</span>
+                                </div>
+                                <div class="countdown-number">
+                                    <span class="minutes countdown-time"></span>
+                                    <span class="countdown-text">Минут</span>
+                                </div>
+                                <div class="countdown-number">
+                                    <span class="seconds countdown-time"></span>
+                                    <span class="countdown-text">Секунд</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="mySlides fade bonus-item">
+
+                            <div class="bonus-title">
+                                <div class="bonus-title-wrapper">
+                                    <h2 class="bonus-text">
+                                        <span class="bonus-span1_v1">
+                                            Закажи на 1000<span class="bsl">грн</span>
+                                        </span>
+                                        <span class="bsl">
+                                            и
+                                            получи
+                                        </span>
+                                        <span class="bonus-span1_v2">
+                                            Бесплатную
+                                        </span>
+                                        <span class="bsl">
+                                            доставку!
+                                        </span>
+                                    </h2>
+                                </div>
+                            </div>
+
+                            <div id="countdown2" class="countdown">
+                                <div class="countdown-number">
+                                    <span class="days countdown-time"></span>
+                                    <span class="countdown-text">Дней</span>
+                                </div>
+                                <div class="countdown-number">
+                                    <span class="hours countdown-time"></span>
+                                    <span class="countdown-text">Часов</span>
+                                </div>
+                                <div class="countdown-number">
+                                    <span class="minutes countdown-time"></span>
+                                    <span class="countdown-text">Минут</span>
+                                </div>
+                                <div class="countdown-number">
+                                    <span class="seconds countdown-time"></span>
+                                    <span class="countdown-text">Секунд</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <a class="next" onclick="plusSlides(1)">&#10095</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about_product" id="up">
+            <div class="container">
+                <div class="about_product-wrapper">
+                    <div class="about_content about_content_v1">
+
+                        <div class="title__wrapper">
+                            <span class="title">Что такое
+                                <span class="title title-style_v1">картины по номерам?</span>
+                            </span>
+                        </div>
+                        <div class="about__cont">
+                            <div class="about__logo">
+                                <img src="images/aboutProduct.png" alt="">
+                            </div>
+                            <span class="about__text">
+                                <p>Картины по номерам относятся к категории товаров
+                                    <span style="font-style: italic; font-weight: 500;">DIY</span>, что значит
+                                    "<span style="font-style: italic;">Do it yourself</span>
+                                    "
+                                    ("Сделай
+                                    сам").
+                                </p>
+
+                                <p>Раскрашивание картин по номерам — это <span
+                                        style="font-style: italic; font-weight: 500;">уникальная
+                                        возможность для
+                                        каждого</span>
+                                    почувствовать
+                                    себя
+                                    художником,
+                                    <span style="font-weight: 500; font-style: italic;">создавая шедевр собственными
+                                        руками.</span>
+                                </p>
+
+                                <p>В последние <span style="font-weight: 500; font-style: italic;">5 лет
+                                        популярность</span> таких картин только возрастает, они все
+                                    больше
+                                    пользуются
+                                    спросом
+                                    на современном рынке.</p>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="about_content about_content_v2">
+
+                        <div class="title__wrapper">
+                            <span class="title">Картины по номерам -
+                                <span class="title title-style_v1">ЭТО?</span>
+                            </span>
+                        </div>
+                        <div class="about__cont">
+                            <div class="about__cont-wrapper">
+
+                                <div class="about__item">
+                                    <div class="about__item-image-wrapper">
+                                        <img src="images/dream.png" alt="">
+                                    </div>
+                                    <div class="about__item-text">
+                                        <span> Реализация мечты — нарисовать картину</span>
+                                    </div>
+                                </div>
+                                <div class="about__item">
+                                    <div class="about__item-image-wrapper">
+                                        <img src="images/motive.png" alt="">
+                                    </div>
+                                    <div class="about__item-text">
+                                        <span>Восторг от собственного результата</span>
+                                    </div>
+                                </div>
+                                <div class="about__item">
+                                    <div class="about__item-image-wrapper">
+                                        <img src="images/unique.png" alt="">
+                                    </div>
+                                    <div class="about__item-text">
+                                        <span>Необычный вид творчества</span>
+
+                                    </div>
+                                </div>
+                                <div class="about__item">
+                                    <div class="about__item-image-wrapper">
+                                        <img src="images/relax.png" alt="">
+                                    </div>
+                                    <div class="about__item-text">
+                                        <span>Способ релаксации</span>
+                                    </div>
+                                </div>
+                                <div class="about__item">
+                                    <div class="about__item-image-wrapper">
+                                        <img src="images/original.png" alt="">
+                                    </div>
+                                    <div class="about__item-text">
+                                        <span> Оригинальный предмет интерьера</span>
+
+                                    </div>
+                                </div>
+                                <div class="about__item">
+                                    <div class="about__item-image-wrapper">
+                                        <img src="images/present.png" alt="">
+                                    </div>
+                                    <div class="about__item-text">
+                                        <span>Отличный подарок,</span>
+                                        <span>которому будет рад и </span>
+                                        <span>ребёнок, и взрослый</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="about_content about_content_v3">
+                        <div class="title__wrapper">
+                            <span class="title">
+                                В комплект входит:
+                            </span>
+                        </div>
+                        <div class="about__cont">
+                            <div class="about__include">
+                                <div class="about__inculde-item">
+                                    <div class="include-item-text">
+                                        <span>
+                                            Подарочная упаковка
+                                        </span>
+                                    </div>
+                                    <div class="include-item-image-wrapper">
+                                        <img src="images/item1.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="about__inculde-item">
+                                    <div class="include-item-text">
+                                        <span>
+                                            Кисти
+                                        </span>
+                                    </div>
+                                    <div class="include-item-image-wrapper">
+                                        <img src="images/item2.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="about__inculde-item">
+                                    <div class="include-item-text">
+                                        <span>
+                                            Акриловые краски
+                                        </span>
+                                    </div>
+                                    <div class="include-item-image-wrapper">
+                                        <img src="images/item3.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="about__inculde-item">
+                                    <div class="include-item-text">
+                                        <span>Натуральный холст,</span>
+                                        <span>натянутый на деревянную</span>
+                                        <span>раму</span>
+                                    </div>
+                                    <div class="include-item-image-wrapper">
+                                        <img src="images/item4.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="about__inculde-item">
+                                    <div class="include-item-text">
+                                        <span>Настенное крепление</span>
+
+                                    </div>
+                                    <div class="include-item-image-wrapper">
+                                        <img src="images/item5.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="about__inculde-item">
+                                    <div class="include-item-text">
+                                        <span>Подробная инструкция</span>
+                                    </div>
+                                    <div class="include-item-image-wrapper">
+                                        <img src="images/item6.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="about__include-image-wrapper">
+                                <img src="images/productBG.png" alt="">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about_us" id="us">
+
+            <div class="container">
+                <div class="title__wrapper">
+
+                    <span class="title">Почему стоит покупать
+                        <span class="title title-style_v1">именно у
+                            нас?</span>
+                    </span>
+
+                </div>
+                <ul>
+
+                    <li>
+                        <span class="icon icon-huge"></span>
+                        <div class="li-cont">
+                            <span class="li-title">
+                                Широкий
+                                ассортимент
+                            </span>
+                            <p class="li-info">
+                                Большой выбор
+                                картин самых разных брэндов на любой вкус
+                            </p>
+                        </div>
+
+
+                    </li>
+                    <li>
+                        <span class="icon icon-fast"></span>
+                        <div class="li-cont">
+                            <span class="li-title">
+                                Лучшая
+                                доставка
+                            </span>
+                            <p class="li-info">
+                                Гарантируем
+                                быструю и качественную доставку по всей Украине
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon icon-presents"></span>
+                        <div class="li-cont">
+                            <span class="li-title">
+                                У нас
+                                приятно
+                                <br>покупать
+                            </span>
+                            <p class="li-info">
+                                Регулярные скидки
+                                и акции
+                            </p>
+                        </div>
+
+                    </li>
+                    <li>
+                        <span class="icon icon-handshake"></span>
+                        <div class="li-cont">
+                            <span class="li-title">
+                                Качественное
+                                обслуживание
+                            </span>
+                            <p class="li-info">
+                                Гарантируем,
+                                что вы получите свой заказ в целом состояние<br>(Гарантия 14 дней).
+                            </p>
+                        </div>
+
+                    </li>
+
+                </ul>
+            </div>
+
+        </section>
+
+        <section class="catalog" id="catalog">
+
+            <div class="container">
+                <h1 class="sect-title">Каталог</h1>
+
+                <div id="Ssl" class="Ssl">
+
+                </div>
+            </div>
+
+        </section>
+
+        <section class="buy" id="buy">
+            <div class="container">
+                <div class="buy-wrapper">
+
+                    <div class="buy__contact-container">
+                        <h2 class="title__wrapper">
+                            <span class="title buy-title">Конкакты</span>
+                        </h2>
+                        <div class="buy__contact-main">
+                            <div class="contact-item">
+                                <span class="contact-item-title">
+                                    телефон
+                                </span>
+                                <span class="contact-item-text">
+                                    +38 (ххх) ххх-хх-хх
+                                </span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-item-title">
+                                    почта
+                                </span>
+                                <span class="contact-item-text">
+                                    123@gmailc.com
+                                </span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-item-title">
+                                    график работы
+                                </span>
+                                <span class="contact-item-text timetable">
+                                    <span>ПН - ПТ 9:00 - 21:00</span>
+                                    <span>СБ - ВС 10:00 - 20:00</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="buy__form-container">
+                        <h2 class="title__wrapper">
+                            <span class="title buy-title">Отправить заявку</span>
+                        </h2>
+                        <form method="post" class="-form buy-form">
+                            <div class="-form__field">
+                                <input type="text" class="-inp _req _ch" id="firstName" name="name"
+                                    placeholder="Ваше имя">
+                                <label for="firstName" class="-label icon-user-alt">Имя*:</label>
+                            </div>
+                            <div class="-form__field">
+                                <input type="text" class="-inp _req _phone" id="phone" name="phone"
+                                    placeholder="+38 (999) 999-99-99">
+                                <label for="phone" class="-label icon-phone-rotaty">Телефон*:</label>
+                            </div>
+                            <div class="-form__field">
+                                <input type="text" class="-inp _email _req _ch" id="email" name="email"
+                                    placeholder="Ваш почта">
+                                <label for="email" class="-label icon-mailbox">Ваша почта*:</label>
+                            </div>
+                            <div class="-form__field">
+                                <textarea type="text" class="-inp" id="message" name="message"
+                                    placeholder="Ваше сообщение"></textarea>
+                                <label for="message" class="-label icon-envelope">Ваше сообщение:</label>
+                            </div>
+                            <div class="-form__field">
+                                <div class="checkbox">
+                                    <input type="checkbox" name="agreement" id="agreement" class="checkbox__input _req">
+                                    <label for="agreement" class="checkbox__label">
+                                        <span>Я даю своё согласие на
+                                            обработку персональных данных в соответствии с
+                                            <a href="privacy.html">Условиями</a>*</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <input type="hidden" name="q_Fd4F$*123fgE$FD4" value="форма">
+                            <button class="-button">Отправить</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer__wrapper">
+                <div class="footer__soc">
+                    <a class="icon-telegram"></a>
+                    <a class="icon-instagram"></a>
+                    <a class="icon-facebook"></a>
+                </div>
+                <span>© 2019-2021 this.ua</span>
+                <div>
+                    <span><a href="privacy.html">Политика конфиденциальности</a></span>
+                    <span>|</span>
+                    <span><a href="return.html">Политика возврата</a></span>
+                </div>
+                <span>ФОП Стремянков ИНН 3412923952</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <div id="myCall" class="popup">
+        <div class="popup__body">
+            <div class="popup__content call-popup">
+                <a href="" class="popup__close close-popup icon-close">
+                </a>
+                <div class="call-container">
+                    <form method="post" class="-form call-form">
+                        <div class="-form__field">
+                            <input type="text" class="-inp _req _ch" id="firstName2" name="name" placeholder="Ваше имя">
+                            <label for="firstName2" class="-label icon-user-alt">Имя*:</label>
+                        </div>
+                        <div class="-form__field">
+                            <input type="text" class="-inp _req _phone" id="phone2" name="phone"
+                                placeholder="+38 (999) 999-99-99">
+                            <label for="phone2" class="-label icon-phone-rotaty">Телефон*:</label>
+                        </div>
+                        <div class="-form__field">
+                            <div class="checkbox">
+                                <input type="checkbox" name="agreement" id="agreement2" class="checkbox__input _req">
+                                <label for="agreement2" class="checkbox__label">
+                                    <span>Я даю своё согласие на
+                                        обработку персональных данных в соответствии с
+                                        <a href="privacy.html">Условиями</a>*</span>
+                                </label>
+                            </div>
+                        </div>
+                        <input type="hidden" name="q_Fd4F$*123fgE$FD4" value="перезвон">
+                        <button class="-button">Отправить</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="popup">
+        <div class="popup__body">
+            <div class="popup__content cart-popup">
+                <a href="" class="popup__close close-popup icon-close">
+                </a>
+                <div class="popup__cart">
+
+                </div>
+                <div class="cost_btn">
+                    <div class="cart-sum-container">
+                        <div class="cart-sum">
+                            <span>Общая стоимость:</span>
+                            <span id="total-sum"></span>
+                        </div>
+                    </div>
+                    <div class="cart-btns-buy">
+                        <a href="#myBuy" class="-button popup-link ">Заказать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myBuy" class="popup">
+        <div class="popup__body">
+            <div class="popup__content cart-popup">
+                <a href="" class="popup__close close-popup icon-close">
+                </a>
+                <div class="cart_buy-container">
+                    <form method="post" class="-form cart_buy-form">
+                        <div class="-form__field">
+                            <input type="text" class="-inp _req _ch" id="firstName3" name="name" placeholder="Ваше имя">
+                            <label for="firstName3" class="-label icon-user-alt">Имя*:</label>
+                        </div>
+                        <div class="-form__field">
+                            <input type="text" class="-inp _req _phone" id="phone3" name="phone"
+                                placeholder="+38 (999) 999-99-99">
+                            <label for="phone3" class="-label icon-phone-rotaty">Телефон*:</label>
+                        </div>
+                        <div class="-form__field">
+                            <textarea type="text" class="-inp _req _adress" id="adress" name="adress"
+                                placeholder="Адресс доставки"></textarea>
+                            <label for="adress" class="-label icon-phone-rotaty">Адресс доставки*:</label>
+                        </div>
+                        <div class="-form__field">
+                            <div class="checkbox">
+                                <input type="checkbox" name="agreement" id="agreement3" class="checkbox__input _req">
+                                <label for="agreement3" class="checkbox__label">
+                                    <span>Я даю своё согласие на
+                                        обработку персональных данных в соответствии с
+                                        <a href="privacy.html">Условиями</a>*</span>
+                                </label>
+                            </div>
+                        </div>
+                        <input type="hidden" name="q_Fd4F$*123fgE$FD4" value="заказали товар">
+                        <input type="hidden" name="U6JAqGNpt7C1" id="U6JAqGNpt7C1" value="">
+                        <button class="-button">Купить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mask.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/eshop.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/form.js"></script>
+
+</body>
+
+</html>
