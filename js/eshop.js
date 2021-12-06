@@ -17,11 +17,18 @@ function loadGoods() {
     let b = new Promise(function (resolve, reject) {
         $.getJSON('goods.json', function (data) {
             var out = '';
+            let ti = 0;
             for (var key in data) {
                 var d = data[key]
                 out += `<div class="Ssl-item">`;
-                out += `<h1 class="Ssl-title icon-arrow-l">${d['title']}</h1>`;
-                out += `<div class="Ssl-slider">`;
+                if(!ti) {
+                    out += `<h1 class="Ssl-title icon-arrow-l active-nav"><span>${d['title']}</span></h1>`;
+                    out += `<div class="Ssl-slider sl-show">`;
+                } else{
+                    out += `<h1 class="Ssl-title icon-arrow-l"><span>${d['title']}</span></h1>`;
+                    out += `<div class="Ssl-slider">`;
+                }
+                ti++;
                 out += `<div class="slider-track slider">`;
                 var j = 0;
                 for (var i in d.goods) {
@@ -101,10 +108,9 @@ function loadGoods() {
                 // instead of a settings object
             ]
         });
-        $('.Ssl-title').on('click', (e)=>{
-            var st = e.target;
-            $(st).next().toggleClass('show');
-            $(st).toggleClass('active-nav');
+        $('.Ssl-title').on('click', function(){
+            $(this).next().toggleClass('sl-show');
+            $(this).toggleClass('active-nav');
             
         })
     })

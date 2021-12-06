@@ -3,7 +3,7 @@
   visibility: hidden;
   height: 0;
 }
-.Ssl-slider.show {
+.Ssl-slider.sl-show {
   opacity: 1;
   visibility: visible;
   height: auto;
@@ -32,12 +32,32 @@
   text-transform: uppercase;
   display: flex;
 }
+.Ssl-title span {
+  position: relative;
+  transition: 0.5s;
+}
+.Ssl-title span::after {
+  position: relative;
+  display: block;
+  content: "";
+  top: 3px;
+  left: 0;
+  width: 0;
+  margin: 0 auto;
+  height: 2px;
+  background-color: #000;
+  transition: 0.5s;
+}
+.Ssl-title.active-nav span::after {
+  width: 100%;
+}
 
 .Ssl-title.icon-arrow-l::before {
   margin-right: 40px;
   display: block;
   transform: rotate(-90deg);
   transition: 0.5s;
+  text-decoration: none;
 }
 .Ssl-title.active-nav.icon-arrow-l::before {
   transform: rotate(90deg);
