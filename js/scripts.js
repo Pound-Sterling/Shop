@@ -17,7 +17,7 @@ $(document).ready(function () {
 
     $('.header__burger').on('click', () => {
         $('.header__burger,.header__menu').toggleClass('burger-active')
-        $('body').toggleClass('lock')
+        $('body').toggleClass('lock');
         window.onresize = function (e) {
             var eW = e.target.outerWidth
             if (eW >= 993) {
@@ -36,6 +36,9 @@ $(document).ready(function () {
     $('.footer__soc a').on('click', () => {
         alert('На данный момент ссылка не доступна');
     })
-
-   
+    var h = localStorage.getItem('h') ? localStorage.getItem('h') : 0;
+    if(h === 0){
+        $('.hello').addClass('hello-show');
+        localStorage.setItem('h', 1);
+    }
 })

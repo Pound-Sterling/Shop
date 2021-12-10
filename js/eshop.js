@@ -17,18 +17,12 @@ function loadGoods() {
     let b = new Promise(function (resolve, reject) {
         $.getJSON('goods.json', function (data) {
             var out = '';
-            let ti = 0;
             for (var key in data) {
                 var d = data[key]
                 out += `<div class="Ssl-item">`;
-                if(!ti) {
-                    out += `<h1 class="Ssl-title icon-arrow-l active-nav"><span>${d['title']}</span></h1>`;
-                    out += `<div class="Ssl-slider sl-show">`;
-                } else{
-                    out += `<h1 class="Ssl-title icon-arrow-l"><span>${d['title']}</span></h1>`;
-                    out += `<div class="Ssl-slider">`;
-                }
-                ti++;
+                out += `<h1 class="Ssl-title icon-arrow-l active-nav"><span>${d['title']}</span></h1>`;
+                out += `<div class="Ssl-slider sl-show">`;
+                
                 out += `<div class="slider-track slider">`;
                 var j = 0;
                 for (var i in d.goods) {
@@ -100,7 +94,9 @@ function loadGoods() {
                     breakpoint: 576,
                     settings: {
                         slidesToShow: 1,
-                        slidesToScroll: 1
+                        slidesToScroll: 1,
+            touchThreshold: 15,
+                    
                     }
                 }
                 // You can unslick at a given breakpoint now by adding:

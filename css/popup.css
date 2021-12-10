@@ -198,13 +198,6 @@ a.popup__close:hover {
 
 /*  media */
 
-@media screen and (max-width: 992px) {
-  .-form {
-    margin: 0;
-    padding: 0;
-  }
-}
-
 @media screen and (max-width: 767px) {
   a.popup__close {
     font-size: 24px;
@@ -213,7 +206,7 @@ a.popup__close:hover {
 
 @media screen and (max-width: 576px) {
   .popup__content {
-    padding: 30px 20px;
+    padding: 20px 10px;
   }
 
   .popup__cart-item {
