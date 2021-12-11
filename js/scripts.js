@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     $('.preload').removeClass('preload')
     const anchors = document.querySelectorAll('a[href*="#"]')
@@ -36,9 +37,15 @@ $(document).ready(function () {
     $('.footer__soc a').on('click', () => {
         alert('На данный момент ссылка не доступна');
     })
-    var h = localStorage.getItem('h') ? localStorage.getItem('h') : 0;
-    if(h === 0){
-        $('.hello').addClass('hello-show');
-        localStorage.setItem('h', 1);
-    }
+    $('.bonus-container').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        touchThreshold: 10,
+    });
+    $('.hello').addClass('hello-show');
 })

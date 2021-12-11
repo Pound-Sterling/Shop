@@ -213,7 +213,7 @@ button.Ssl-btn__delete {
 .slider-track .slick-dots {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   margin: 30px 0;
   flex-wrap: wrap;
 }

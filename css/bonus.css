@@ -1,0 +1,308 @@
+/* BONUSES */ /* BONUSES */ /* BONUSES */ /* BONUSES */ /* BONUSES */ /* BONUSES */
+
+.bonus {
+  border-top: 5vw solid #dfae3c;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  height: 40vw;
+  background: url("/images/ded-moroz-oboi-2560x1600_7.jpg") 0 0/100% auto
+    no-repeat;
+}
+.bonus-container {
+  display: flex;
+  align-items: center;
+}
+.bonus-container-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bonus-title {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.bonus-title-wrapper {
+  width: 100%;
+  height: 145px;
+  background-color: #dfae3c;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bonus-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5em;
+}
+.bonus-text * {
+  font-family: PT SANS;
+  font-size: 24px;
+}
+
+.bsl {
+  text-transform: lowercase;
+}
+
+/* bonus 1  */
+
+.bonus-span1_v1 {
+  text-transform: uppercase;
+  font-size: 30px;
+}
+.bonus-span1_v2 {
+  font-size: 38px;
+  text-transform: uppercase;
+  margin: 3px 0px;
+}
+
+/* bonus 2  */
+
+.bonus-span2_v1 {
+  font-size: 32px;
+  text-transform: uppercase;
+}
+.bonus-span2_v2 {
+  margin: 3px 0;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+.bonus-span2_v3 {
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+.bonus-container .slick-list {
+  width: 85%;
+}
+.slick-track {
+  display: flex;
+}
+.bonus-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.bonus-container .slick-arrow {
+  border: none;
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  z-index: 1110;
+  font-size: 0;
+  width: 20px;
+  height: 40px;
+  opacity: 0.8;
+  touch-action: manipulation;
+}
+.bonus-container .slick-arrow:hover {
+  opacity: 0.9;
+}
+.bonus-container .slick-arrow.slick-disabled {
+  opacity: 0.2;
+}
+.bonus-container .slick-arrow.slick-prev {
+  left: 30px;
+  background: url("../svg/arrow-l.svg") 0 0 no-repeat;
+}
+.bonus-container .slick-arrow.slick-next {
+  right: 30px;
+  background: url("../svg/arrow-r.svg") 0 0 no-repeat;
+}
+
+.bonus-container .slick-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+}
+.bonus-container .slick-dots li {
+  list-style: none;
+  margin: 0 10px;
+}
+.bonus-container .slick-dots button {
+  transition: 0.3s;
+  font-size: 0;
+  border: none;
+  padding: 0;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #000;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.bonus-container .slick-dots li.slick-active button {
+  background-color: #000;
+}
+
+.bonus-link__container {
+  display: flex;
+  justify-content: center;
+}
+.bonus-link {
+  background-color: #fff;
+  border: none;
+  outline: 1px solid black;
+  padding: 15px 30px;
+}
+.bonus-link:active,
+.bonus-link:focus {
+  outline: 1px solid black;
+}
+
+@media screen and (max-width: 1200px) {
+  .bonus-container .slick-list {
+    width: 80%;
+  }
+  .bonus {
+    height: 50vw;
+  }
+  /* bonus */
+
+  .bonus-text * {
+    font-size: 20px;
+  }
+  .bsl {
+    text-transform: lowercase;
+  }
+
+  /* bonus 1  */
+
+  .bonus-span1_v1 {
+    text-transform: uppercase;
+    font-size: 26px;
+  }
+  .bonus-span1_v2 {
+    font-size: 32px;
+    text-transform: uppercase;
+    margin: 3px 0px;
+  }
+
+  /* bonus 2  */
+
+  .bonus-span2_v1 {
+    font-size: 28px;
+    text-transform: uppercase;
+  }
+  .bonus-span2_v2 {
+    margin: 3px 0;
+    font-size: 28px;
+    text-transform: uppercase;
+  }
+  .bonus-span2_v3 {
+    font-size: 32px;
+    text-transform: uppercase;
+  }
+}
+@media screen and (max-width: 992px) {
+  .bonus {
+    height: 55vw;
+  }
+  /* bonus */
+
+  .bonus-text * {
+    font-size: 18px;
+  }
+
+  /* bonus spans */
+
+  .bsl {
+    text-transform: lowercase;
+    font-size: 20px;
+  }
+
+  /* bonus 1  */
+
+  .bonus-span1_v1 {
+    text-transform: uppercase;
+    font-size: 26px;
+  }
+  .bonus-span1_v2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 3px 0px;
+  }
+
+  /* bonus 2  */
+
+  .bonus-span2_v1 {
+    font-size: 26px;
+    text-transform: uppercase;
+  }
+  .bonus-span2_v2 {
+    font-size: 26px;
+    text-transform: uppercase;
+  }
+  .bonus-span2_v3 {
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .bonus {
+    height: 400px;
+    background: rgba(255, 105, 180, 0.3);
+  }
+  .bonus-container .slick-dots {
+    margin: 10px 0 20px;
+  }
+  /* bonus */
+
+  .bonus-text * {
+    font-size: 18px;
+  }
+
+  /* bonus spans */
+
+  .bsl {
+    text-transform: lowercase;
+    font-size: 20px;
+  }
+
+  /* bonus 1  */
+
+  .bonus-span1_v1 {
+    text-transform: uppercase;
+    font-size: 26px;
+  }
+  .bonus-span1_v2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 3px 0px;
+  }
+
+  /* bonus 2  */
+
+  .bonus-span2_v1 {
+    font-size: 26px;
+    text-transform: uppercase;
+  }
+  .bonus-span2_v2 {
+    font-size: 26px;
+    text-transform: uppercase;
+  }
+  .bonus-span2_v3 {
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .bonus {
+    min-height: 380px;
+  }
+  .bonus-container .slick-list {
+    width: 85%;
+  }
+  .bonus-container .slick-arrow.slick-prev {
+    left: -5px;
+  }
+  .bonus-container .slick-arrow.slick-next {
+    right: -5px;
+  }
+}

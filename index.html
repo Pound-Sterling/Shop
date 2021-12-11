@@ -8,24 +8,65 @@
     <title>Раскраски по номерам</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <style>
+    
+        /* hello */
+        .hello {
+          z-index: 111111;
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          opacity: 1;
+          visibility: visible;
+          background-color: #000;
+        }
+        @keyframes move {
+          0% {
+            opacity: 1;
+            visibility: visible;
+          }
+          100% {
+            visibility: hidden;
+            opacity: 0;
+          }
+        }
+        .hello.hello-show {
+          opacity: 0;
+          visibility: hidden;
+          animation: move 1.3s ease-in-out 0s;
+        }
+        .hello__body {
+          min-height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .hello__body span {
+          text-align: center;
+          font-family: Georgia, "Times New Roman", Times, serif;
+          font-size: 40px;
+          color: white;
+        }
+    </style>
     <link rel=" stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/timer.css">
-    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/bonus.css">
     <link rel="stylesheet" href="css/Ssl.css">
     <link rel="stylesheet" href="css/popup.css">
+
 </head>
 
 <body class="preload">
-    <!-- <div id="myCall" class="popup">
-        <div class="popup__body"> -->
+
     <div class="hello">
         <div class="hello__body">
-            <div class="hello__content">
-                <span>Добро пожаловать в наш магазин!</span>
-            </div>
+            <span>Добро пожаловать в наш магазин!</span>
         </div>
     </div>
     <header class="header lock-padding" id="header">
@@ -52,11 +93,6 @@
                             </a>
                         </li>
                         <li>
-                            <a class="header__link" href="#up">
-                                <nobr>О товаре</nobr>
-                            </a>
-                        </li>
-                        <li>
                             <a class="header__link" href="#us">
                                 <nobr>О нас</nobr>
                             </a>
@@ -71,7 +107,12 @@
                                 <nobr>Заказать</nobr>
                             </a>
                         </li>
-
+                        <li>
+                            <a class="header__link" href="#up">
+                                <nobr>О товаре</nobr>
+                            </a>
+                        </li>
+                        
                     </ul>
 
                 </div>
@@ -137,95 +178,99 @@
         <section class="bonus" id="bonus">
             <div class="container">
                 <div class="bonus-container">
-                    <a class="prev" onclick="plusSlides(-1)">&#10094</a>
-                    <div class="bonus-container-wrapper">
-                        <div class="mySlides fade bonus-item">
 
-                            <div class="bonus-title">
-                                <div class="bonus-title-wrapper">
+                    <div class="mySlides fade bonus-item">
 
-                                    <div class="bonus-text">
-                                        <span class="bonus-span2_v1">
-                                            Акция!
-                                            <span>Н</span><span class="bsl">а каждую
-                                            </span>
+                        <div class="bonus-title">
+                            <div class="bonus-title-wrapper">
+                
+                                <div class="bonus-text">
+                                    <span class="bonus-span2_v1">
+                                        Акция!
+                                        <span>Н</span><span class="bsl">а каждую
                                         </span>
-                                        <span class="bonus-span2_v2">
-                                            третью <span class="bsl">раскарску</span>
-                                        </span>
-                                        <span class="bonus-span2_v3">
-                                            скидка 30%
-                                        </span>
-                                    </div>
-
+                                    </span>
+                                    <span class="bonus-span2_v2">
+                                        третью <span class="bsl">раскарску</span>
+                                    </span>
+                                    <span class="bonus-span2_v3">
+                                        скидка 30%
+                                    </span>
                                 </div>
+                
                             </div>
-
-                            <div id="countdown1" class="countdown">
-                                <div class="countdown-number">
-                                    <span class="days countdown-time"></span>
-                                    <span class="countdown-text">Дней</span>
-                                </div>
-                                <div class="countdown-number">
-                                    <span class="hours countdown-time"></span>
-                                    <span class="countdown-text">Часов</span>
-                                </div>
-                                <div class="countdown-number">
-                                    <span class="minutes countdown-time"></span>
-                                    <span class="countdown-text">Минут</span>
-                                </div>
-                                <div class="countdown-number">
-                                    <span class="seconds countdown-time"></span>
-                                    <span class="countdown-text">Секунд</span>
-                                </div>
-                            </div>
-
                         </div>
-                        <div class="mySlides fade bonus-item">
-
-                            <div class="bonus-title">
-                                <div class="bonus-title-wrapper">
-                                    <h2 class="bonus-text">
-                                        <span class="bonus-span1_v1">
-                                            Закажи на 1000<span class="bsl">грн</span>
-                                        </span>
-                                        <span class="bsl">
-                                            и
-                                            получи
-                                        </span>
-                                        <span class="bonus-span1_v2">
-                                            Бесплатную
-                                        </span>
-                                        <span class="bsl">
-                                            доставку!
-                                        </span>
-                                    </h2>
-                                </div>
+                
+                        <div id="countdown1" class="countdown">
+                            <div class="countdown-number">
+                                <span class="days countdown-time"></span>
+                                <span class="countdown-text">Дней</span>
                             </div>
-
-                            <div id="countdown2" class="countdown">
-                                <div class="countdown-number">
-                                    <span class="days countdown-time"></span>
-                                    <span class="countdown-text">Дней</span>
-                                </div>
-                                <div class="countdown-number">
-                                    <span class="hours countdown-time"></span>
-                                    <span class="countdown-text">Часов</span>
-                                </div>
-                                <div class="countdown-number">
-                                    <span class="minutes countdown-time"></span>
-                                    <span class="countdown-text">Минут</span>
-                                </div>
-                                <div class="countdown-number">
-                                    <span class="seconds countdown-time"></span>
-                                    <span class="countdown-text">Секунд</span>
-                                </div>
+                            <div class="countdown-number">
+                                <span class="hours countdown-time"></span>
+                                <span class="countdown-text">Часов</span>
                             </div>
-
+                            <div class="countdown-number">
+                                <span class="minutes countdown-time"></span>
+                                <span class="countdown-text">Минут</span>
+                            </div>
+                            <div class="countdown-number">
+                                <span class="seconds countdown-time"></span>
+                                <span class="countdown-text">Секунд</span>
+                            </div>
                         </div>
+                
                     </div>
-                    <a class="next" onclick="plusSlides(1)">&#10095</a>
+
+                    <div class="mySlides fade bonus-item">
+                
+                        <div class="bonus-title">
+                            <div class="bonus-title-wrapper">
+                                <h2 class="bonus-text">
+                                    <span class="bonus-span1_v1">
+                                        Закажи на 1000<span class="bsl">грн</span>
+                                    </span>
+                                    <span class="bsl">
+                                        и
+                                        получи
+                                    </span>
+                                    <span class="bonus-span1_v2">
+                                        Бесплатную
+                                    </span>
+                                    <span class="bsl">
+                                        доставку!
+                                    </span>
+                                </h2>
+                            </div>
+                        </div>
+                
+                        <div id="countdown2" class="countdown">
+                            <div class="countdown-number">
+                                <span class="days countdown-time"></span>
+                                <span class="countdown-text">Дней</span>
+                            </div>
+                            <div class="countdown-number">
+                                <span class="hours countdown-time"></span>
+                                <span class="countdown-text">Часов</span>
+                            </div>
+                            <div class="countdown-number">
+                                <span class="minutes countdown-time"></span>
+                                <span class="countdown-text">Минут</span>
+                            </div>
+                            <div class="countdown-number">
+                                <span class="seconds countdown-time"></span>
+                                <span class="countdown-text">Секунд</span>
+                            </div>
+                        </div>
+                
+                    </div>
+
                 </div>
+
+                <div class="bonus-link__container">
+                    <a href="#catalog" class="bonus-link">Использовать Бонус</a>
+                </div>
+
             </div>
         </section>
 
@@ -709,7 +754,6 @@
     <script src="js/cart.js"></script>
     <script src="js/timer.js"></script>
     <script src="js/eshop.js"></script>
-    <script src="js/slider.js"></script>
     <script src="js/popup.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/form.js"></script>

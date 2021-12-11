@@ -10,7 +10,7 @@ $(document).ready(function () {
         if (error === 0) {
             var form = $(this);
 
-            if (form.hasClass('cart_buy-form')) {
+            if (form.hasClass('cart-form')) {
                 if (!$.isEmptyObject(cart)) {
                     $('#U6JAqGNpt7C1').val(JSON.stringify(cart));
                 } else {
@@ -29,10 +29,9 @@ $(document).ready(function () {
                 success: function () {
                     $(form).removeClass('_sending')
                     $(form).trigger('reset');
-                    if (form.hasClass('cart_buy-form')) {
+                    if (form.hasClass('cart-form')) {
                         localStorage.clear();
-                        location.reload();
-                        alert('Ваш заказ уже обрабатываеться')
+                        location.href = 'spasibo.html';
                     }
 
                 },
