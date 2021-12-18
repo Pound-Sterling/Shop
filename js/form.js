@@ -29,11 +29,10 @@ $(document).ready(function () {
                 success: function () {
                     $(form).removeClass('_sending')
                     $(form).trigger('reset');
+                    location.href = 'spasibo.html';
                     if (form.hasClass('cart-form')) {
                         localStorage.clear();
-                        location.href = 'spasibo.html';
                     }
-
                 },
                 error: function () {
                     alert('Error!');

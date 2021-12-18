@@ -1,13 +1,3 @@
-.Ssl-slider {
-  opacity: 0;
-  visibility: hidden;
-  height: 0;
-}
-.Ssl-slider.sl-show {
-  opacity: 1;
-  visibility: visible;
-  height: auto;
-}
 .sect-title {
   padding: 50px 0px;
   text-align: center;
@@ -19,50 +9,11 @@
 }
 .Ssl {
   padding-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .Ssl-item {
-  border-top: 2px solid #ccc;
-}
-.Ssl-item:last-child {
-  border-bottom: 2px solid #ccc;
-}
-.Ssl-title {
-  font-size: 26px;
-  padding: 40px 0 40px 45px;
-  text-transform: uppercase;
-  display: flex;
-}
-.Ssl-title span {
-  position: relative;
-  transition: 0.5s;
-}
-.Ssl-title span::after {
-  position: relative;
-  display: block;
-  content: "";
-  top: 3px;
-  left: 0;
-  width: 0;
-  margin: 0 auto;
-  height: 1.1px;
-  background-color: #000;
-  transition: 0.5s;
-}
-.Ssl-title.active-nav span::after {
-  width: 100%;
-}
-
-.Ssl-title.icon-arrow-l::before {
-  margin-right: 40px;
-  display: block;
-  transform: rotate(-90deg);
-  transition: 0.5s;
-  text-decoration: none;
-}
-.Ssl-title.active-nav.icon-arrow-l::before {
-  transform: rotate(90deg);
-}
-.slider-item {
+  flex: 0 0 25%;
   background-color: transparent;
   border: 1px solid transparent;
   padding: 40px 20px;
@@ -70,7 +21,8 @@
   flex-direction: column;
   align-items: center;
 }
-.slider-item:hover {
+
+.Ssl-item:hover {
   border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: rgba(0, 0, 0, 0.1);
 }
@@ -85,6 +37,7 @@
 }
 .Ssl-img-wrapper img {
   width: 100%;
+  height: 100%;
   outline: 1px solid #ccc;
 }
 
@@ -101,6 +54,9 @@
   justify-content: space-between;
   flex-direction: column;
   margin-bottom: 15px;
+}
+.Ssl-price__title {
+  text-align: center;
 }
 .Ssl-price {
   vertical-align: middle;
@@ -120,6 +76,9 @@
   display: flex;
 }
 .Ssl-btn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 200px;
   height: 40px;
   border-color: transparent;
@@ -133,6 +92,10 @@
 }
 .Ssl-btn button.s {
   border-radius: 0;
+}
+.Ssl-btn button.s > div::before {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 22px;
 }
 button.Ssl-btn__delete {
   display: none;
@@ -169,83 +132,50 @@ button.Ssl-btn__delete {
   color: firebrick;
 }
 
-/* slick slider slider-track */
+/* Ssl post */
 
-.slick-list {
-  overflow: hidden;
-}
-.slick-track {
-  display: flex;
+#Ssl_post {
+  height: 50px;
 }
 
-.slider-track {
-  position: relative;
-  padding: 0 60px;
-}
+/* Кнопка загрузки */
 
-.slider-track .slick-arrow {
-  border: none;
-  position: absolute;
-  top: 50%;
-  margin-top: -30px;
-  z-index: 10;
-  font-size: 0;
-  width: 20px;
+.Ssl_load-more {
+  margin: 20px auto;
+  width: 100%;
   height: 40px;
-  opacity: 0.8;
-  touch-action: manipulation;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
-.slider-track .slick-arrow:hover {
-  opacity: 0.9;
+.Ssl_load-more.lm-hide {
+  opacity: 0;
+  visibility: hidden;
 }
-.slider-track .slick-arrow.slick-disabled {
-  opacity: 0.2;
-}
-.slider-track .slick-arrow.slick-prev {
-  left: 0;
-  background: url("../svg/arrow-l.svg") 0 0 no-repeat;
-}
-.slider-track .slick-arrow.slick-next {
-  right: 0;
-  background: url("../svg/arrow-r.svg") 0 0 no-repeat;
+.Ssl_load-more:active {
+  border-color: #000;
 }
 
-.slider-track .slick-dots {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 30px 0;
-  flex-wrap: wrap;
-}
-.slider-track .slick-dots li {
-  list-style: none;
-  margin: 0 10px;
-}
-.slider-track .slick-dots button {
-  transition: 0.3s;
-  font-size: 0;
-  border: none;
-  padding: 0;
-  width: 12px;
-  height: 12px;
-  border: 2px solid #000;
-  background-color: transparent;
-  border-radius: 50%;
-}
-.slider-track .slick-dots li.slick-active button {
-  background-color: #000;
+@media screen and (max-width: 1200px) {
+  .Ssl-item {
+    flex: 0 0 33.33333%;
+    padding: 30px 20px;
+  }
+  .Ssl-img-wrapper {
+    width: 175px;
+    height: 175px;
+  }
+  .Ssl-content {
+    padding: 15px 0;
+  }
+  .Ssl-code {
+    margin-top: 15px;
+  }
 }
 
 @media screen and (max-width: 992px) {
-  .Ssl-title {
-    padding: 30px 0 30px 30px;
-    font-size: 26px;
-  }
-  .Ssl-title.icon-arrow-l::before {
-    margin-right: 30px;
-    display: block;
-    transform: rotate(-90deg);
-    transition: 0.5s;
+  .Ssl-item {
+    padding: 20px 20px;
   }
 }
 
@@ -253,49 +183,43 @@ button.Ssl-btn__delete {
   .sect-title {
     padding: 30px 0;
   }
+  .Ssl-img-wrapper {
+    width: 150px;
+    height: 150px;
+  }
   .Ssl {
     padding-bottom: 10px;
   }
-  .Ssl-title {
-    padding: 20px 0 20px 30px;
-    font-size: 22px;
-  }
-  .Ssl-title.icon-arrow-l::before {
-    margin-right: 20px;
-    display: block;
-    transform: rotate(-90deg);
-    transition: 0.5s;
+  .Ssl-item {
+    flex: 0 0 50%;
   }
 }
 
 @media screen and (max-width: 576px) {
+  .Ssl-item {
+    padding: 25px 0 5px;
+  }
   .Ssl-slider button {
     min-width: auto;
   }
-  .slider-track {
-    position: relative;
-    padding: 0 30px;
-  }
-
   .sect-title {
     padding: 20px 0;
     font-size: 36px;
   }
-  .Ssl-title {
-    padding: 20px 0 20px 30px;
-    font-size: 20px;
+  .Ssl-img-wrapper {
+    width: 100px;
+    height: 100px;
   }
-  .Ssl-title.icon-arrow-l::before {
-    margin-right: 15px;
-    display: block;
-    transform: rotate(-90deg);
-    transition: 0.5s;
+  .Ssl-btn button {
+    width: 100px;
   }
-
-  .slider-track .slick-arrow.slick-prev {
-    left: 3px;
+  .Ssl-btn__delete.s {
+    width: 50px;
   }
-  .slider-track .slick-arrow.slick-next {
-    right: 3px;
+  .Ssl-btn__buy.s {
+    width: 50px;
+  }
+  .Ssl-content {
+    padding-bottom: 0;
   }
 }

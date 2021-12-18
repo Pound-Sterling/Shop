@@ -35,7 +35,7 @@
         .hello.hello-show {
           opacity: 0;
           visibility: hidden;
-          animation: move 1.3s ease-in-out 0s;
+          animation: move 1s ease-in-out 0s;
         }
         .hello__body {
           min-height: 100%;
@@ -51,8 +51,7 @@
           color: white;
         }
     </style>
-    <link rel=" stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/timer.css">
@@ -69,12 +68,13 @@
             <span>Добро пожаловать в наш магазин!</span>
         </div>
     </div>
+    
     <header class="header lock-padding" id="header">
         <div class="container">
 
             <div class="header__content">
                 <div class="header__logo">
-                    <a href="">
+                    <a href="#start">
                         <img src="images/logo.png" alt="Раскраски Украина">
                     </a>
                 </div>
@@ -130,7 +130,7 @@
         </div>
     </header>
 
-    <div class="start-background ">
+    <div class="start-background" id="start">
         <div class="start_content container">
             <div class="title__wrapper">
                 <span class="title">Что такое
@@ -271,174 +271,6 @@
                     <a href="#catalog" class="bonus-link">Использовать Бонус</a>
                 </div>
 
-            </div>
-        </section>
-
-        <section class="about_us" id="us">
-
-            <div class="container">
-                <div class="title__wrapper">
-
-                    <span class="title">Почему стоит покупать
-                        <span class="title title-style_v1">именно у
-                            нас?</span>
-                    </span>
-
-                </div>
-                <ul>
-
-                    <li>
-                        <span class="icon icon-huge"></span>
-                        <div class="li-cont">
-                            <span class="li-title">
-                                Широкий
-                                ассортимент
-                            </span>
-                            <p class="li-info">
-                                Большой выбор
-                                картин самых разных брэндов на любой вкус
-                            </p>
-                        </div>
-
-
-                    </li>
-                    <li>
-                        <span class="icon icon-fast"></span>
-                        <div class="li-cont">
-                            <span class="li-title">
-                                Лучшая
-                                доставка
-                            </span>
-                            <p class="li-info">
-                                Гарантируем
-                                быструю и качественную доставку по всей Украине
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="icon icon-presents"></span>
-                        <div class="li-cont">
-                            <span class="li-title">
-                                У нас
-                                приятно
-                                <br>покупать
-                            </span>
-                            <p class="li-info">
-                                Регулярные скидки
-                                и акции
-                            </p>
-                        </div>
-
-                    </li>
-                    <li>
-                        <span class="icon icon-handshake"></span>
-                        <div class="li-cont">
-                            <span class="li-title">
-                                Качественное
-                                обслуживание
-                            </span>
-                            <p class="li-info">
-                                Гарантируем,
-                                что вы получите свой заказ в целом состояние<br>(Гарантия 14 дней).
-                            </p>
-                        </div>
-
-                    </li>
-
-                </ul>
-            </div>
-
-        </section>
-
-        <section class="catalog" id="catalog">
-
-            <div class="container">
-                <h1 class="sect-title">Каталог</h1>
-
-                <div id="Ssl" class="Ssl">
-
-                </div>
-            </div>
-
-        </section>
-
-        <section class="cont-form cont__buy" id="buy">
-            <div class="container">
-                <div class="form-wrapper">
-                    <div class="form-container buy__contact">
-                        <h2 class="title__wrapper">
-                            <span class="title form-title">Конкакты</span>
-                        </h2>
-                        <div class="buy__contact-main">
-                            <div class="contact-item">
-                                <span class="contact-item-title">
-                                    телефон
-                                </span>
-                                <span class="contact-item-text">
-                                    +38 (ххх) ххх-хх-хх
-                                </span>
-                            </div>
-                            <div class="contact-item">
-                                <span class="contact-item-title">
-                                    почта
-                                </span>
-                                <span class="contact-item-text">
-                                    123@gmailc.com
-                                </span>
-                            </div>
-                            <div class="contact-item">
-                                <span class="contact-item-title">
-                                    график работы
-                                </span>
-                                <span class="contact-item-text timetable">
-                                    <span>ПН - ПТ 9:00 - 21:00</span>
-                                    <span>СБ - ВС 10:00 - 20:00</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-container buy__form">
-                        <h2 class="title__wrapper">
-                            <span class="title form-title">Отправить заявку</span>
-                        </h2>
-                        <form method="post" class="-form buy-form">
-                            <div class="-form__field">
-                                <input type="text" class="-inp _req _ch" id="firstName" name="name"
-                                    placeholder="Ваше имя">
-                                <label for="firstName" class="-label icon-user-alt">Имя*:</label>
-                            </div>
-                            <div class="-form__field">
-                                <input type="text" class="-inp _req _phone" id="phone" name="phone"
-                                    placeholder="+38 (999) 999-99-99">
-                                <label for="phone" class="-label icon-phone-rotaty">Телефон*:</label>
-                            </div>
-                            <div class="-form__field">
-                                <input type="text" class="-inp _email  _ch" id="email" name="email"
-                                    placeholder="Ваш почта">
-                                <label for="email" class="-label icon-mailbox">Ваша почта:</label>
-                            </div>
-                            <div class="-form__field">
-                                <textarea type="text" class="-inp" id="message" name="message"
-                                    placeholder="Ваше сообщение"></textarea>
-                                <label for="message" class="-label icon-envelope">Ваше сообщение:</label>
-                            </div>
-                            <div class="-form__field">
-                                <div class="checkbox">
-                                    <input type="checkbox" name="agreement" id="agreement" class="checkbox__input _req">
-                                    <label for="agreement" class="checkbox__label">
-                                        <span>Я даю своё согласие на
-                                            обработку персональных данных в соответствии с
-                                            <a href="privacy.html">Условиями</a>*</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <input type="hidden" name="q_Fd4F$*123fgE$FD4" value="форма">
-                            <button class="-button">Отправить</button>
-                        </form>
-                    </div>
-
-                </div>
             </div>
         </section>
 
@@ -589,14 +421,135 @@
             </div>
         </section>
 
-        <section class="cont-form cont__recall" id="up">
+        <section class="about_us" id="us">
+
+            <div class="container">
+                <div class="title__wrapper">
+
+                    <span class="title">Почему стоит покупать
+                        <span class="title title-style_v1">именно у
+                            нас?</span>
+                    </span>
+
+                </div>
+                <ul>
+
+                    <li>
+                        <span class="icon icon-huge"></span>
+                        <div class="li-cont">
+                            <span class="li-title">
+                                Широкий
+                                ассортимент
+                            </span>
+                            <p class="li-info">
+                                Большой выбор
+                                картин самых разных брэндов на любой вкус
+                            </p>
+                        </div>
+
+
+                    </li>
+                    <li>
+                        <span class="icon icon-fast"></span>
+                        <div class="li-cont">
+                            <span class="li-title">
+                                Лучшая
+                                доставка
+                            </span>
+                            <p class="li-info">
+                                Гарантируем
+                                быструю и качественную доставку по всей Украине
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon icon-presents"></span>
+                        <div class="li-cont">
+                            <span class="li-title">
+                                У нас
+                                приятно
+                                <br>покупать
+                            </span>
+                            <p class="li-info">
+                                Регулярные скидки
+                                и акции
+                            </p>
+                        </div>
+
+                    </li>
+                    <li>
+                        <span class="icon icon-handshake"></span>
+                        <div class="li-cont">
+                            <span class="li-title">
+                                Качественное
+                                обслуживание
+                            </span>
+                            <p class="li-info">
+                                Гарантируем,
+                                что вы получите свой заказ в целом состояние<br>(Гарантия 14 дней).
+                            </p>
+                        </div>
+
+                    </li>
+
+                </ul>
+            </div>
+
+        </section>
+
+        <section class="catalog" id="catalog">
+
+            <div class="container">
+                <h1 class="sect-title">Каталог</h1>
+                <div id="Ssl" class="Ssl _load-more">
+                    <div id="Ssl_post" class="_loading-icon"></div>
+                    <button onclick="getContent()" class="Ssl_load-more lm-hide">Загрузить ещё</button>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="cont-form cont__buy" id="buy">
             <div class="container">
                 <div class="form-wrapper">
-                    <div class="form-container recall__form">
+                    <div class="form-container buy__contact">
                         <h2 class="title__wrapper">
-                            <span class="title form-title recall-tittle">Мы вам перезвоним в течении 5 минут!</span>
+                            <span class="title form-title">Конкакты</span>
                         </h2>
-                        <form method="post" class="-form recall-form">
+                        <div class="buy__contact-main">
+                            <div class="contact-item">
+                                <span class="contact-item-title">
+                                    телефон
+                                </span>
+                                <span class="contact-item-text">
+                                    +38 (ххх) ххх-хх-хх
+                                </span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-item-title">
+                                    почта
+                                </span>
+                                <span class="contact-item-text">
+                                    123@gmailc.com
+                                </span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-item-title">
+                                    график работы
+                                </span>
+                                <span class="contact-item-text timetable">
+                                    <span>ПН - ПТ 9:00 - 21:00</span>
+                                    <span>СБ - ВС 10:00 - 20:00</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-container buy__form">
+                        <h2 class="title__wrapper">
+                            <span class="title form-title">Отправить заявку</span>
+                        </h2>
+                        <form method="post" class="-form buy-form">
                             <div class="-form__field">
                                 <input type="text" class="-inp _req _ch" id="firstName" name="name"
                                     placeholder="Ваше имя">
@@ -606,18 +559,28 @@
                                 <input type="text" class="-inp _req _phone" id="phone" name="phone"
                                     placeholder="+38 (999) 999-99-99">
                                 <label for="phone" class="-label icon-phone-rotaty">Телефон*:</label>
-                            </div>                            
+                            </div>
+                            <div class="-form__field">
+                                <input type="text" class="-inp _email  _ch" id="email" name="email"
+                                    placeholder="Ваш почта">
+                                <label for="email" class="-label icon-mailbox">Ваша почта:</label>
+                            </div>
+                            <div class="-form__field">
+                                <textarea type="text" class="-inp" id="message" name="message"
+                                    placeholder="Ваше сообщение"></textarea>
+                                <label for="message" class="-label icon-envelope">Ваше сообщение:</label>
+                            </div>
                             <div class="-form__field">
                                 <div class="checkbox">
-                                    <input type="checkbox" name="agreement" id="agreement4" class="checkbox__input _req">
-                                    <label for="agreement4" class="checkbox__label">
+                                    <input type="checkbox" name="agreement" id="agreement" class="checkbox__input _req">
+                                    <label for="agreement" class="checkbox__label">
                                         <span>Я даю своё согласие на
                                             обработку персональных данных в соответствии с
                                             <a href="privacy.html">Условиями</a>*</span>
                                     </label>
                                 </div>
                             </div>
-                            <input type="hidden" name="q_Fd4F$*123fgE$FD4" value="форма-перезвон">
+                            <input type="hidden" name="q_Fd4F$*123fgE$FD4" value="форма">
                             <button class="-button">Отправить</button>
                         </form>
                     </div>
@@ -625,6 +588,9 @@
                 </div>
             </div>
         </section>
+
+
+
 
     </main>
 
@@ -686,7 +652,7 @@
 
     <div id="myModal" class="popup">
         <div class="popup__body">
-            <div class="popup__content cart-popup">
+            <div class="popup__content cart-popup _loading-icon">
                 <a href="" class="popup__close close-popup icon-close">
                 </a>
                 <div class="popup__cart">

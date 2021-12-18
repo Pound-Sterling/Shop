@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
@@ -41,6 +43,10 @@
   background-color: transparent;
 }
 
+._loading-icon {
+  width: 100%;
+  background: url("../images/load.gif") center / 50px no-repeat;
+}
 body {
   overflow-x: hidden;
 }
@@ -64,7 +70,11 @@ body.lock {
 a {
   text-decoration: none;
 }
-
+a:hover,
+a:focus,
+a:active {
+  outline: none;
+}
 /* header */ /* header */ /* header */ /* header */ /* header */
 
 .start-background {
@@ -247,7 +257,7 @@ a {
     height: 4px;
     background-color: #fff;
     border-radius: 4px;
-    transition: 0.3s ease;
+    transition: all 0.3s ease 0s;
     left: 5px;
   }
   .header__burger span:nth-child(1) {
@@ -323,19 +333,15 @@ a {
 
 /* ABOUT PRODUCT */ /* ABOUT PRODUCT */ /* ABOUT PRODUCT */ /* ABOUT PRODUCT */ /* ABOUT PRODUCT */
 
-.about_content {
-  padding: 50px 0 0px 0;
+.about_product {
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 }
-.about_content:last-child {
-  border: none;
+.about_content {
+  padding: 50px 0 0px 0;
 }
 
 /* about 2  */
 
-.about_content_v2 {
-  padding-bottom: 20px;
-}
 .about__cont-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -367,16 +373,13 @@ a {
 }
 .about__item-text * {
   font-size: 20px;
-  font-family: PT SANS;
+  font-family: "PT SANS";
   font-weight: bold;
   color: #bd0c0c;
 }
 
 /* about 3  */
 
-.about_content_v3 {
-  padding-bottom: 20px;
-}
 .about_content_v3 .about__cont {
   display: flex;
 }
@@ -394,6 +397,8 @@ a {
 
 .include-item-text {
   display: flex;
+  font-family: "PT SANS";
+  font-weight: bold;
   flex-direction: column;
   justify-content: center;
   text-align: center;
@@ -764,6 +769,77 @@ textarea.-inp {
 
 /* media */ /* media */ /* media */ /* media */ /* media */ /* media */
 
+/* slick slider slider-track */
+
+.slick-list {
+  overflow: hidden;
+}
+.slick-track {
+  display: flex;
+}
+
+.slider-track {
+  position: relative;
+  padding: 0 60px;
+}
+
+.slider-track .slick-arrow {
+  border: none;
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  z-index: 10;
+  font-size: 0;
+  width: 20px;
+  height: 40px;
+  opacity: 0.8;
+  touch-action: manipulation;
+}
+.slider-track .slick-arrow:hover {
+  opacity: 0.9;
+}
+.slider-track .slick-arrow.slick-disabled {
+  opacity: 0.2;
+}
+.slider-track .slick-arrow.slick-prev {
+  left: 0;
+  background: url("../svg/arrow-l.svg") 0 0 no-repeat;
+}
+.slider-track .slick-arrow.slick-next {
+  right: 0;
+  background: url("../svg/arrow-r.svg") 0 0 no-repeat;
+}
+
+.about_product-wrapper .slick-dots {
+  margin-top: 0;
+}
+.slick-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+.slick-dots li {
+  list-style: none;
+  margin: 0 10px;
+}
+.slick-dots button {
+  transition: 0.3s;
+  font-size: 0;
+  border: none;
+  padding: 0;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #000;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.slick-dots li.slick-active button {
+  background-color: #000;
+}
+
 @media screen and (max-width: 1200px) {
   .header__link {
     padding: 9px 16px;
@@ -801,10 +877,10 @@ textarea.-inp {
 
   /* buy */
 
-  .buy__contact-container {
+  .buy__contact {
     width: 50%;
   }
-  .buy__form-container {
+  .buy__form {
     width: 50%;
   }
 }
@@ -900,10 +976,10 @@ textarea.-inp {
   .form-wrapper {
     padding-bottom: 20px;
   }
-  .buy__contact-container {
+  .buy__contact {
     width: 45%;
   }
-  .buy__form-container {
+  .buy__form {
     width: 55%;
   }
   /* recall form */
@@ -980,9 +1056,9 @@ textarea.-inp {
   /*  about product 2  */
 
   .about__item {
-    flex: 0 0 100%;
+    flex: 0 0 50%;
     margin: 0;
-    padding: 10px 0px;
+    padding: 10px 5px;
   }
 
   .about__item-image-wrapper {
@@ -1098,6 +1174,13 @@ textarea.-inp {
   .buy-wrapper {
     flex-direction: column-reverse;
     padding: 0 5px;
+  }
+
+  .slider-track .slick-arrow.slick-prev {
+    left: 3px;
+  }
+  .slider-track .slick-arrow.slick-next {
+    right: 3px;
   }
 }
 

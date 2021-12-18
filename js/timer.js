@@ -37,8 +37,12 @@ function initializeClock(id, endtime) {
     var timeinterval = setInterval(updateClock, 1000);
 }
 
-// var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000); // for endless timer
-var deadline1 = 'December 15 2021';
-var deadline2 = 'December 09 2021';
-initializeClock('countdown1', deadline1);
-initializeClock('countdown2', deadline2);
+// var today = new Date(),
+//     deadline1 = new Date(today.getTime() + 3 * 24 * 60 * 60 * 1000);
+// 	deadline1 = new Date(deadline1.getFullYear(), deadline1.getMonth(), deadline1.getDate(), 0, 0, 0);
+// var today = new Date(),
+//     deadline2 = new Date(today.getTime() + 2 * 24 * 60 * 60 * 1000);
+// 	deadline2 = new Date(deadline2.getFullYear(), deadline2.getMonth(), deadline2.getDate(), 0, 0, 0);
+var deadline = '31 Dec 2021';
+initializeClock('countdown1', deadline);
+initializeClock('countdown2', deadline);

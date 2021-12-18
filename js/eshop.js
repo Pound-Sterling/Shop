@@ -1,9 +1,29 @@
 var cart = {}; //моя корзина
 var cost = 0;
 var count = 0;
-var keys = {} // ключи
 var select = {} // кнопки
 var ki = 0;
+
+var eW = window.innerWidth;
+window.onresize = function (e) {
+    eW = e.target.outerWidth
+    checkSelect()
+}
+
+const loadMoreBlock = document.querySelector('._load-more');
+var iqw = 2;
+
+async function getContent(){
+
+    if(!loadMoreBlock.classList.contains('_loading')){
+
+        loadMoreBlock.classList.add('_loading');
+        loadGoods(iqw);
+        iqw++;
+
+    }  
+}
+
 
 $('document').ready(function () {
     checkCart();
@@ -11,125 +31,79 @@ $('document').ready(function () {
     loadGoods();
 });
 
-function loadGoods() {
+function loadGoods(key_ss=1) {
     //загружаю товары на страницу
     // console.log(data);
-    let b = new Promise(function (resolve, reject) {
-        $.getJSON('goods.json', function (data) {
-            var out = '';
-            for (var key in data) {
-                var d = data[key]
-                out += `<div class="Ssl-item">`;
-                out += `<h1 class="Ssl-title icon-arrow-l active-nav"><span>${d['title']}</span></h1>`;
-                out += `<div class="Ssl-slider sl-show">`;
+        var key_p = 12;
+        var key_r = key_p * key_ss;
+        var key_k = key_p * (key_ss - 1);
+        // console.log(key_r, ' - r, k - ', key_k);
+        let b = new Promise(function (resolve, reject) {
+            $.getJSON('goods.json', function (data) {
+                var out = '';
+                for(var key = key_k; key < key_r; key++){
+                    if(data[key] !== undefined){
+                        out += `<div class="Ssl-item">`;
+                        out += `<div class="Ssl-img-wrapper">`;
+                        out += `<img class="_loading-icon" src="${data[key]['image']}" alt="">`;
+                        out += `</div>`;
+                        out += `<div class="Ssl-content">`;
+                        out += `<span class="Ssl-price-cont">`;
+                        out += `<span class="Ssl-price__title"> Старая цена:</span>`;
+                        var oldPrice = parseInt(data[key]['price']) + 200;
+                        out += `<span class="Ssl-price Ssl-price__old">${oldPrice}грн</span>`;
+                        out += `</span>`;
+                        out += `<span class="Ssl-price-cont">`;
+                        out += `<span class="Ssl-price__title">Цена со скидкой:</span>`;
+                        out += `<span class="Ssl-price Ssl-price__new">${data[key]['price']}грн</span>`;
+                        out += `</span>`;
+                        out += `</div>`;
+                        out += `<div class="Ssl-btn">`;
+                        out += `<button class="Ssl-btn__delete" data-art="${data[key]['code']}" data-foo="${data[key]['price']}">Удалить</button>`;
+                        out += `<button class="Ssl-btn__buy" data-art="${data[key]['code']}" data-foo="${data[key]['price']}">Купить</button>`;
+                        out += `</div>`;
+                        out += `<div class="Ssl-code">`;
+                        out += `<span class="Ssl-code-title">Код товара:</span>`;
+                        out += `<span class="Ssl-code-code">${data[key]['code']}</span>`;
+                        out += `</div>`;
+                        out += '</div>';
+                    }
+
+                }
+                out += `<div id='Ssl_post'>`;
+                out += `</div>`;
                 
-                out += `<div class="slider-track slider">`;
-                var j = 0;
-                for (var i in d.goods) {
-                    j++;
-                    var d_g = d.goods[i];
-                    out += `<div class="slider-item slider__item" data-attr="${d_g['id']}">`;
-                    out += `<div class="Ssl-img-wrapper">`;
-                    out += `<img src="${d_g['image']}" alt="">`;
-                    out += `</div>`;
-                    out += `<div class="Ssl-content">`;
-                    out += `<span class="Ssl-price-cont">`;
-                    out += `<span class="Ssl-price__title"> Старая цена:</span>`;
-                    var oldPrice = parseInt(d_g['cost']) + 200;
-                    out += `<span class="Ssl-price Ssl-price__old">${oldPrice}грн</span>`;
-                    out += `</span>`;
-                    out += `<span class="Ssl-price-cont">`;
-                    out += `<span class="Ssl-price__title">Цена со скидкой:</span>`;
-                    out += `<span class="Ssl-price Ssl-price__new">${d_g['cost']}грн</span>`;
-                    out += `</span>`;
-                    out += `</div>`;
-                    out += `<div class="Ssl-btn">`;
-                    out += `<button class="Ssl-btn__delete" data-key="${key}"data-art="${d_g['id']}" data-foo="${d_g['cost']}">Удалить</button>`;
-                    out += `<button class="Ssl-btn__buy" data-key="${key}"data-art="${d_g['id']}" data-foo="${d_g['cost']}">Добавить в корзину</button>`;
-                    out += `</div>`;
-                    out += `<div class="Ssl-code">`;
-                    out += `<span class="Ssl-code-title">Код товара:</span>`;
-                    out += `<span class="Ssl-code-code">${d_g['code']}</span>`;
-                    out += `</div>`;
-                    out += `</div>`;
-                }
-                out += `</div>`;
-                out += `</div>`;
-                out += '</div>';
-            }
-
-
-
-            $('#Ssl').html(out);
-            $('button.Ssl-btn__buy').on('click', addToCart);
-            $('button.Ssl-btn__delete').on('click', deleteBtn);
-            resolve(true);
+    
+                $('#Ssl_post').replaceWith(out);
+                $('button.Ssl-btn__buy').on('click', addToCart);
+                $('button.Ssl-btn__delete').on('click', deleteBtn);
+                resolve(true);
+                return true;
+            });
         });
-    });
-    b.then(function () {
-        checkSelect()
-        $('.slider-track').slick({
-            dots: true,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            touchThreshold: 10,
-            responsive: [
-                {
-                    breakpoint: 1201,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                    }
-                },
-                {
-                    breakpoint: 993,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 576,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-            touchThreshold: 15,
-                    
-                    }
-                }
-                // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
-            ]
-        });
-        $('.Ssl-title').on('click', function(){
-            $(this).next().toggleClass('sl-show');
-            $(this).toggleClass('active-nav');
-            
+        b.then(function () {
+            checkSelect()
+            loadMoreBlock.classList.remove('_loading');
+            $('.Ssl_load-more').removeClass("lm-hide");
+
         })
-    })
+  
 
 }
 
 function addToCart() {
     //добавляем товар в корзину
     var articul = $(this).attr('data-art');
-    var key = $(this).attr('data-key');
     var atr_cost = $(this).attr('data-foo');
     atr_cost = Number(atr_cost);
-    if (keys[key] === undefined) {
-        keys[key] = 1;
-    }
-    else if (cart[articul] === undefined) {
-        keys[key]++;
-    }
+
     if (cart[articul] != undefined) {
         cart[articul]++;
     }
     else {
         cart[articul] = 1;
+        popupOpen(document.getElementById('myModal'));
+        showCart();
     }
     cost += atr_cost;
     count++;
@@ -138,14 +112,10 @@ function addToCart() {
     showMiniCart();
 }
 
-
 function checkCart() {
     // проверяю наличия корзины в localStorage;
     if (localStorage.getItem('cart') != null) {
         cart = JSON.parse(localStorage.getItem('cart'))
-    }
-    if (localStorage.getItem('keys') != null) {
-        keys = JSON.parse(localStorage.getItem('keys'))
     }
     if (localStorage.getItem('select') != null) {
         select = JSON.parse(localStorage.getItem('select'))
@@ -157,16 +127,30 @@ function checkCart() {
         count = localStorage.getItem('count')
     }
 }
+
 function showMiniCart() {
     var cart = $('#count-goods')
     cart.html(count);
 }
 
 function changeBtn(a) {
+    
     a = $(a)
     a.addClass('s');
     a.prev().addClass('s');
-    a.text('Добавить ещё');
+    if(eW < 576){
+        a.text('');
+        a.prev().text('');
+        // корзина
+        a.append(`<div class="icon-cart-plus"></div>`);
+        // мусорка
+        a.prev().append(`<div class="icon-trash"></div>`);
+
+    } else { 
+        a.prev().text('Удалить');
+        a.text('Добавить ещё');
+
+    }
     a.attr('data-select', '1');
 
     var articul = a.attr('data-art');
@@ -179,7 +163,6 @@ function changeBtn(a) {
 function deleteBtn() {
     var a = $(this).next()
     var atr_cost = a.attr('data-foo');
-    var key = a.attr('data-key');
     var articul = a.attr('data-art');
 
     changeViewBtn(a)
@@ -189,24 +172,18 @@ function deleteBtn() {
 
 
     delete select[articul];
-
-
-    if (keys[key] == 1) {
-        delete keys[key];
-    } else {
-        keys[key]--;
-    }
     delete cart[articul];
 
     saveCartToLs();//сохраняю корзину в локал стораже
     showMiniCart();
 }
+
 function changeViewBtn(a) {
 
     a = $(a)
     a.prev().removeClass('s');
     a.removeClass('s');
-    a.text('Добавить в корзину');
+    a.text('Купить');
     a.attr('data-select', '0');
 }
 
