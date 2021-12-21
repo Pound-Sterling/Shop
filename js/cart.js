@@ -1,185 +1,127 @@
 var modal = $('a[href="#myModal"]');
-
-
 function showCart() {
-    $.getJSON('goods.json', function (data) {
-        if ($.isEmptyObject(cart)) {
-            // корзина пуста
-            var out = 'Корзина пуста. Добавьте товар в корзину';
-            $('.popup__cart').html(out);
-            $('.cost_btn').removeClass('cb_show');
-        }
-        else {            
-            var out = '';
-            var cost_r = '';
-            for(var key in data){
-                var g = data[key]
-                    for (var kk in cart) {
-                        if (data[key]['code'] == kk) {
-                            out += `<div class="popup__cart-item">`;
-                            out += `<div class="popup__cart-c1">`;
-                            out += `<button class="delete" data-art="${kk}" data-foo="${g['price']}">x</button>`;
-                            out += `<div class="cart-img-wrapper">`;
-                            out += '<img class="cart-img _loading-icon" src="' + g['image'] + '">';
-                            out += `</div>`;
-                            out += `<div class="cart-content">`;
-                            out += `<div class="cart-title">`;
-                            out += `<span class="cart-title-title">Название:</span>`;
-                            out += `<span class="cart-title-text">${g['name']}</span>`;
-                            out += `</div>`;
-                            out += `<div class="cart-code">`;
-                            out += `<span class="cart-code-title">Код товара:</span>`;
-                            out += `<span class="cart-code-code">${g['code']}</span>`;
-                            out += `</div>`;
-                            out += `</div>`;
-                            out += `</div>`;
-                            out += `<div class="popup__cart-c2">`;
-                            out += `<div class="cart-cont-btns">`;
-                            out += `<button class="minus" data-art="${kk}" data-foo="${g['price']}">-</button>`;
-                            out += `<span id="cart-item-count">${cart[kk]}</span>`;
-                            out += `<button class="plus" data-art="${kk}" data-foo="${g['price']}">+</button>`;
-                            out += '</div>';
-                            out += `<div class="cart-sum">`;
-                            out += `<span class="cart-sum-title">Сумма</span>`;
-                            out += `<span class="cart-sum-cost">${cart[kk] * g['price']}грн</span>`;
-                            out += `</div>`;
-                            out += `</div>`;
-                            out += `</div>`;
-                        }
-                    }
-            }
-            
-            cost_r += cost + 'грн';
-            $('.cost_btn').addClass('cb_show');
-            $('#total-sum').html(cost_r);
-            $('.popup__cart').html(out);
-            $('.popup__content._loading-icon').removeClass('_loading-icon');
-            $('.plus').on('click', plusGoods);
-            $('.minus').on('click', minusGoods);
-            $('.delete').on('click', deleteGoods);
-        }
-    });
-}
-
-
-modal.on('click', () => {
-    checkCart();
-    showCart();
-})
-
-function plusGoods() {
-    var articul = $(this).attr('data-art');
-    var atr_cost = $(this).attr('data-foo');
-    console.log(articul);
-    atr_cost = Number(atr_cost);
-    console.log(atr_cost);
-    localStorage.getItem('cost');
-    cost += atr_cost;
-    cart[articul]++;
-    count++;
-
-
-    changeCart('prev', this)
-
-
-    saveCartToLs();
-
-}
-
-function minusGoods() {
-    var articul = $(this).attr('data-art');
-    var atr_cost = $(this).attr('data-foo');
-
-    localStorage.getItem('cost');
-    atr_cost = Number(atr_cost);
-    cost -= atr_cost;
-
-    if (cart[articul] > 1) {
-        cart[articul]--;
-
+  $.getJSON("goods.json", function (t) {
+    if ($.isEmptyObject(cart)) {
+      var a = "Кошик порожній. Додайте товар у кошик";
+      $(".popup__cart").html(a),
+        $(".cost_btn").removeClass("cb_show"),
+        $(".popup__content._loading-icon").removeClass("_loading-icon");
     } else {
-        $(this).closest('.popup__cart-item').addClass('hide-item');
-
-        delete cart[articul];
-        setTimeout(function () {
-            showCart();
-        }, 300);
-        var ss = findSelect(articul);
-        changeViewBtn(ss);
-
-        delete select[articul];
+      a = "";
+      var s = "";
+      for (var c in t) {
+        var o = t[c];
+        for (var e in cart)
+          t[c].code == e &&
+            ((a += '<div class="popup__cart-item">'),
+            (a += '<div class="popup__cart-c1">'),
+            (a += `<button class="delete" data-art="${e}" data-foo="${o.price}">x</button>`),
+            (a += '<div class="cart-img-wrapper">'),
+            (a += '<img class="cart-img _loading-icon" src="' + o.image + '">'),
+            (a += "</div>"),
+            (a += '<div class="cart-content">'),
+            (a += '<div class="cart-title">'),
+            (a += '<span class="cart-title-title"><span>Назва:</span></span>'),
+            (a += `<span class="cart-title-text" style="font-style:italic">" ${o.name} "</span>`),
+            (a += "</div>"),
+            (a += '<div class="cart-size">'),
+            (a += '<span class="cart-size-title">Розмір:</span>'),
+            (a += `<span class="cart-size-text">${o.size}</span>`),
+            (a += "</div>"),
+            (a += '<div class="cart-code">'),
+            (a += '<span class="cart-code-title">Код товару:</span>'),
+            (a += `<span class="cart-code-code">${o.code}</span>`),
+            (a += "</div>"),
+            (a += "</div>"),
+            (a += "</div>"),
+            (a += '<div class="popup__cart-c2">'),
+            (a += '<div class="cart-cont-btns">'),
+            (a += `<button class="minus" data-art="${e}" data-foo="${o.price}"><span>-</span></button>`),
+            (a += `<span id="cart-item-count">${cart[e]}</span>`),
+            (a += `<button class="plus" data-art="${e}" data-foo="${o.price}"><span>+</span></button>`),
+            (a += "</div>"),
+            (a += '<div class="cart-sum">'),
+            (a += '<span class="cart-sum-title">Сума</span>'),
+            (a += `<span class="cart-sum-cost">${cart[e] * o.price}грн</span>`),
+            (a += "</div>"),
+            (a += "</div>"),
+            (a += "</div>"));
+      }
+      (s += cost + "грн"),
+        $(".cost_btn").addClass("cb_show"),
+        $("#total-sum").html(s),
+        $(".popup__cart").html(a),
+        $(".popup__content._loading-icon").removeClass("_loading-icon"),
+        $(".plus").on("click", plusGoods),
+        $(".minus").on("click", minusGoods),
+        $(".delete").on("click", deleteGoods);
     }
-
-
-    count--;;
-
-
-    changeCart('next', this)
-
-    saveCartToLs();
-
+  });
 }
-
-function deleteGoods() {
-    var articul = $(this).attr('data-art');
-    var atr_cost = $(this).attr('data-foo');
-
-    // console.log(articul);
-    // console.log(atr_cost);
-
-    atr_cost = Number(atr_cost);
-
-    cost -= atr_cost * cart[articul];
-    count -= cart[articul];
-
-    delete cart[articul];
-
-
-    $('#count-goods').html(count);
-    $(this).closest('.popup__cart-item').addClass('hide-item');
-    setTimeout(function () {
+function plusGoods() {
+  var t = $(this).attr("data-art"),
+    a = $(this).attr("data-foo");
+  (a = Number(a)),
+    localStorage.getItem("cost"),
+    (cost += a),
+    cart[t]++,
+    count++,
+    changeCart("prev", this),
+    saveCartToLs();
+}
+function minusGoods() {
+  var t = $(this).attr("data-art"),
+    a = $(this).attr("data-foo");
+  if ((localStorage.getItem("cost"), (a = Number(a)), (cost -= a), cart[t] > 1))
+    cart[t]--;
+  else {
+    $(this).closest(".popup__cart-item").addClass("hide-item"),
+      delete cart[t],
+      setTimeout(function () {
         showCart();
+      }, 300);
+    var s = findSelect(t);
+    changeViewBtn(s), delete select[t];
+  }
+  count--, changeCart("next", this), saveCartToLs();
+}
+function deleteGoods() {
+  var t = $(this).attr("data-art"),
+    a = $(this).attr("data-foo");
+  (a = Number(a)),
+    (cost -= a * cart[t]),
+    (count -= cart[t]),
+    delete cart[t],
+    $("#count-goods").html(count),
+    $(this).closest(".popup__cart-item").addClass("hide-item"),
+    setTimeout(function () {
+      showCart();
     }, 300);
-    var ss = findSelect(articul);
-    changeViewBtn(ss);
-
-    delete select[articul];
-    saveCartToLs();
+  var s = findSelect(t);
+  changeViewBtn(s), delete select[t], saveCartToLs();
 }
-function findSelect(q) {
-    var a = $('.Ssl-btn__buy');
-    for (var i = 0; i < a.length; i++) {
-        for (var k in select) {
-            if ($(a[i]).attr('data-art') == q) {
-                return (a[i])
-            }
-        }
-    }
+function findSelect(t) {
+  for (var a = $(".Ssl-btn__buy"), s = 0; s < a.length; s++)
+    for (var c in select) if ($(a[s]).attr("data-art") == t) return a[s];
 }
-
 function saveCartToLs() {
-    localStorage.setItem('select', JSON.stringify(select));
-    localStorage.setItem('cart', JSON.stringify(cart));
-    localStorage.setItem('cost', cost);
-    localStorage.setItem('count', count);
+  localStorage.setItem("select", JSON.stringify(select)),
+    localStorage.setItem("cart", JSON.stringify(cart)),
+    localStorage.setItem("cost", cost),
+    localStorage.setItem("count", count);
 }
-
-function changeCart(where, a) {
-
-    var articul = $(a).attr('data-art');
-    var atr_cost = $(a).attr('data-foo');
-    var fff = $(a).closest('.popup__cart-item');
-    if(cart[articul] != undefined){
-        fff.find('.cart-sum-cost').html(cart[articul] * atr_cost + 'грн');
-        $('#total-sum').html(cost + "грн");
-    }
-    
-    $('#count-goods').html(count);
-
-    if (where == 'prev') {
-        $(a).prev().html(cart[articul]);
-    } else if (where == "next") {
-        $(a).next().html(cart[articul]);
-    }
-
+function changeCart(t, a) {
+  var s = $(a).attr("data-art"),
+    c = $(a).attr("data-foo"),
+    o = $(a).closest(".popup__cart-item");
+  null != cart[s] &&
+    (o.find(".cart-sum-cost").html(cart[s] * c + "грн"),
+    $("#total-sum").html(cost + "грн")),
+    $("#count-goods").html(count),
+    "prev" == t
+      ? $(a).prev().html(cart[s])
+      : "next" == t && $(a).next().html(cart[s]);
 }
+modal.on("click", () => {
+  checkCart(), showCart();
+});

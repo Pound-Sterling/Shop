@@ -220,7 +220,7 @@
 @media screen and (max-width: 767px) {
   .bonus {
     height: 400px;
-    background: rgba(255, 105, 180, 0.3);
+    background: rgba(255, 140, 0, 0.3);
   }
   .bonus-container .slick-dots {
     margin: 10px 0 20px;
@@ -235,7 +235,7 @@
 
   .bsl {
     text-transform: lowercase;
-    font-size: 20px;
+    font-size: 22px;
   }
 
   /* bonus 1  */

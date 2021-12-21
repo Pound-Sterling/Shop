@@ -1,204 +1,134 @@
-var cart = {}; //моя корзина
-var cost = 0;
-var count = 0;
-var select = {} // кнопки
-var ki = 0;
-
-var eW = window.innerWidth;
-window.onresize = function (e) {
-    eW = e.target.outerWidth
-    checkSelect()
-}
-
-const loadMoreBlock = document.querySelector('._load-more');
+var cart = {},
+  cost = 0,
+  count = 0,
+  select = {},
+  ki = 0,
+  eW = window.innerWidth;
+window.onresize = function (t) {
+  (eW = t.target.outerWidth), checkSelect();
+};
+const loadMoreBlock = document.querySelector("._load-more");
 var iqw = 2;
-
-async function getContent(){
-
-    if(!loadMoreBlock.classList.contains('_loading')){
-
-        loadMoreBlock.classList.add('_loading');
-        loadGoods(iqw);
-        iqw++;
-
-    }  
+async function getContent() {
+  loadMoreBlock.classList.contains("_loading") ||
+    (loadMoreBlock.classList.add("_loading"), loadGoods(iqw), iqw++);
 }
-
-
-$('document').ready(function () {
-    checkCart();
-    showMiniCart();
-    loadGoods();
-});
-
-function loadGoods(key_ss=1) {
-    //загружаю товары на страницу
-    // console.log(data);
-        var key_p = 12;
-        var key_r = key_p * key_ss;
-        var key_k = key_p * (key_ss - 1);
-        // console.log(key_r, ' - r, k - ', key_k);
-        let b = new Promise(function (resolve, reject) {
-            $.getJSON('goods.json', function (data) {
-                var out = '';
-                for(var key = key_k; key < key_r; key++){
-                    if(data[key] !== undefined){
-                        out += `<div class="Ssl-item">`;
-                        out += `<div class="Ssl-img-wrapper">`;
-                        out += `<img class="_loading-icon" src="${data[key]['image']}" alt="">`;
-                        out += `</div>`;
-                        out += `<div class="Ssl-content">`;
-                        out += `<span class="Ssl-price-cont">`;
-                        out += `<span class="Ssl-price__title"> Старая цена:</span>`;
-                        var oldPrice = parseInt(data[key]['price']) + 200;
-                        out += `<span class="Ssl-price Ssl-price__old">${oldPrice}грн</span>`;
-                        out += `</span>`;
-                        out += `<span class="Ssl-price-cont">`;
-                        out += `<span class="Ssl-price__title">Цена со скидкой:</span>`;
-                        out += `<span class="Ssl-price Ssl-price__new">${data[key]['price']}грн</span>`;
-                        out += `</span>`;
-                        out += `</div>`;
-                        out += `<div class="Ssl-btn">`;
-                        out += `<button class="Ssl-btn__delete" data-art="${data[key]['code']}" data-foo="${data[key]['price']}">Удалить</button>`;
-                        out += `<button class="Ssl-btn__buy" data-art="${data[key]['code']}" data-foo="${data[key]['price']}">Купить</button>`;
-                        out += `</div>`;
-                        out += `<div class="Ssl-code">`;
-                        out += `<span class="Ssl-code-title">Код товара:</span>`;
-                        out += `<span class="Ssl-code-code">${data[key]['code']}</span>`;
-                        out += `</div>`;
-                        out += '</div>';
-                    }
-
-                }
-                out += `<div id='Ssl_post'>`;
-                out += `</div>`;
-                
-    
-                $('#Ssl_post').replaceWith(out);
-                $('button.Ssl-btn__buy').on('click', addToCart);
-                $('button.Ssl-btn__delete').on('click', deleteBtn);
-                resolve(true);
-                return true;
-            });
-        });
-        b.then(function () {
-            checkSelect()
-            loadMoreBlock.classList.remove('_loading');
-            $('.Ssl_load-more').removeClass("lm-hide");
-
-        })
-  
-
+function loadGoods(t = 1) {
+  var a = 12 * t,
+    e = 12 * (t - 1);
+  new Promise(function (t, s) {
+    $.getJSON("goods.json", function (s) {
+      for (var o = "", n = e; n < a; n++)
+        void 0 !== s[n] &&
+          ((o += '<div class="Ssl-item">'),
+          (o += '<div class="Ssl-img-wrapper">'),
+          (o += `<img class="_loading-icon" src="${s[n].image}" alt="">`),
+          (o += "</div>"),
+          (o += '<div class="Ssl-content">'),
+          (o += '<span class="Ssl-size-cont">'),
+          (o += "<span>Розмір:</span>"),
+          (o += `<span class="Ssl-content__text Ssl-size">${s[n].size}</span>`),
+          (o += "</span>"),
+          (o += '<span class="Ssl-price-cont">'),
+          (o += "<span> Стара ціна:</span>"),
+          (o += `<span class="Ssl-content__text Ssl-price__old">${parseInt(
+            s[n].price + (s[n].price / 100) * 30
+          )}грн</span>`),
+          (o += "</span>"),
+          (o += '<span class="Ssl-price-cont">'),
+          (o += "<span>Ціна зі знижкою:</span>"),
+          (o += `<span class="Ssl-content__text Ssl-price__new">${s[n].price}грн</span>`),
+          (o += "</span>"),
+          (o += "</div>"),
+          (o += '<div class="Ssl-btn">'),
+          (o += `<button class="Ssl-btn__delete" data-art="${s[n].code}" data-foo="${s[n].price}">Видалити</button>`),
+          (o += `<button class="Ssl-btn__buy" data-art="${s[n].code}" data-foo="${s[n].price}">Додати<wbr> в&nbsp;кошик</button>`),
+          (o += "</div>"),
+          (o += '<div class="Ssl-code">'),
+          (o += '<span class="Ssl-code-title">Код товару:</span>'),
+          (o += `<span class="Ssl-code-code">${s[n].code}</span>`),
+          (o += "</div>"),
+          (o += "</div>"));
+      return (
+        (o += "<div id='Ssl_post'>"),
+        (o += "</div>"),
+        $("#Ssl_post").replaceWith(o),
+        $("button.Ssl-btn__buy").on("click", addToCart),
+        $("button.Ssl-btn__delete").on("click", deleteBtn),
+        t(!0),
+        !0
+      );
+    });
+  }).then(function () {
+    checkSelect(),
+      loadMoreBlock.classList.remove("_loading"),
+      $(".Ssl_load-more").removeClass("lm-hide");
+  });
 }
-
 function addToCart() {
-    //добавляем товар в корзину
-    var articul = $(this).attr('data-art');
-    var atr_cost = $(this).attr('data-foo');
-    atr_cost = Number(atr_cost);
-
-    if (cart[articul] != undefined) {
-        cart[articul]++;
-    }
-    else {
-        cart[articul] = 1;
-        popupOpen(document.getElementById('myModal'));
-        showCart();
-    }
-    cost += atr_cost;
-    count++;
-    changeBtn($(this))
-    saveCartToLs()
+  var t = $(this).attr("data-art"),
+    a = $(this).attr("data-foo");
+  (a = Number(a)),
+    null != cart[t]
+      ? cart[t]++
+      : ((cart[t] = 1),
+        popupOpen(document.getElementById("myModal")),
+        showCart()),
+    (cost += a),
+    count++,
+    changeBtn($(this)),
+    saveCartToLs(),
     showMiniCart();
 }
-
 function checkCart() {
-    // проверяю наличия корзины в localStorage;
-    if (localStorage.getItem('cart') != null) {
-        cart = JSON.parse(localStorage.getItem('cart'))
-    }
-    if (localStorage.getItem('select') != null) {
-        select = JSON.parse(localStorage.getItem('select'))
-    }
-    if (localStorage.getItem('cost') != null) {
-        cost = parseInt(localStorage.getItem('cost'))
-    }
-    if (localStorage.getItem('count') != null) {
-        count = localStorage.getItem('count')
-    }
+  null != localStorage.getItem("cart") &&
+    (cart = JSON.parse(localStorage.getItem("cart"))),
+    null != localStorage.getItem("select") &&
+      (select = JSON.parse(localStorage.getItem("select"))),
+    null != localStorage.getItem("cost") &&
+      (cost = parseInt(localStorage.getItem("cost"))),
+    null != localStorage.getItem("count") &&
+      (count = localStorage.getItem("count"));
 }
-
 function showMiniCart() {
-    var cart = $('#count-goods')
-    cart.html(count);
+  $("#count-goods").html(count);
 }
-
-function changeBtn(a) {
-    
-    a = $(a)
-    a.addClass('s');
-    a.prev().addClass('s');
-    if(eW < 576){
-        a.text('');
-        a.prev().text('');
-        // корзина
-        a.append(`<div class="icon-cart-plus"></div>`);
-        // мусорка
-        a.prev().append(`<div class="icon-trash"></div>`);
-
-    } else { 
-        a.prev().text('Удалить');
-        a.text('Добавить ещё');
-
-    }
-    a.attr('data-select', '1');
-
-    var articul = a.attr('data-art');
-
-    select[articul] = 1;
-
-
+function changeBtn(t) {
+  (t = $(t)).addClass("s"),
+    t.prev().addClass("s"),
+    eW < 576
+      ? (t.text(""),
+        t.prev().text(""),
+        t.append('<div class="icon-cart-plus"></div>'),
+        t.prev().append('<div class="icon-trash"></div>'))
+      : (t.prev().text("Видалити"), t.text("Додати ще")),
+    t.attr("data-select", "1");
+  var a = t.attr("data-art");
+  select[a] = 1;
 }
-
 function deleteBtn() {
-    var a = $(this).next()
-    var atr_cost = a.attr('data-foo');
-    var articul = a.attr('data-art');
-
-    changeViewBtn(a)
-
-    count -= cart[articul];
-    cost -= atr_cost * cart[articul];
-
-
-    delete select[articul];
-    delete cart[articul];
-
-    saveCartToLs();//сохраняю корзину в локал стораже
+  var t = $(this).next(),
+    a = t.attr("data-foo"),
+    e = t.attr("data-art");
+  changeViewBtn(t),
+    (count -= cart[e]),
+    (cost -= a * cart[e]),
+    delete select[e],
+    delete cart[e],
+    saveCartToLs(),
     showMiniCart();
 }
-
-function changeViewBtn(a) {
-
-    a = $(a)
-    a.prev().removeClass('s');
-    a.removeClass('s');
-    a.text('Купить');
-    a.attr('data-select', '0');
+function changeViewBtn(t) {
+  (t = $(t)).prev().removeClass("s"),
+    t.removeClass("s"),
+    t.html("Додати<wbr> в&nbsp;кошик"),
+    t.attr("data-select", "0");
 }
-
 function checkSelect() {
-    var a = $('.Ssl-btn__buy');
-    var b;
-    var c;
-    for (var i = 0; i < a.length; i++) {
-        b = a[i];
-        for (var k in select) {
-            c = $(b).attr('data-art');
-            if (c == k) {
-                changeBtn(b)
-            }
-        }
-    }
+  for (var t, a = $(".Ssl-btn__buy"), e = 0; e < a.length; e++)
+    for (var s in ((t = a[e]), select))
+      $(t).attr("data-art") == s && changeBtn(t);
 }
-
+$("document").ready(function () {
+  checkCart(), showMiniCart(), loadGoods();
+});

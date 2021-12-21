@@ -2,10 +2,36 @@
 <html lang="en">
 
 <head>
+    <script>
+        !function (w, d, t) {
+          w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+        
+          ttq.load('C6VPM1Q00GCE1D774SL0');
+          ttq.page();
+        }(window, document, 'ttq');
+    </script>
+
     <meta charset="UTF-8">
+        <!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '643074610162348');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=643074610162348&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Раскраски по номерам</title>
+    <title>Картини за номерами</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <style>
@@ -52,7 +78,8 @@
         }
     </style>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" rel="preload">
+    <link rel="stylesheet" href="css/fonts.css" rel="preload">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/timer.css">
     <link rel="stylesheet" href="css/bonus.css">
@@ -65,7 +92,7 @@
 
     <div class="hello">
         <div class="hello__body">
-            <span>Добро пожаловать в наш магазин!</span>
+            <span>Ласкаво просимо до нашого магазину!</span>
         </div>
     </div>
     
@@ -89,12 +116,17 @@
 
                         <li>
                             <a class="header__link" href="#bonus">
-                                <nobr>Акции</nobr>
+                                <nobr>Акції</nobr>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="header__link" href="#up">
+                                <nobr>Про товар</nobr>
                             </a>
                         </li>
                         <li>
                             <a class="header__link" href="#us">
-                                <nobr>О нас</nobr>
+                                <nobr>Про нас</nobr>
                             </a>
                         </li>
                         <li>
@@ -104,21 +136,15 @@
                         </li>
                         <li>
                             <a class="header__link" href="#buy">
-                                <nobr>Заказать</nobr>
+                                <nobr>Замовити</nobr>
                             </a>
                         </li>
-                        <li>
-                            <a class="header__link" href="#up">
-                                <nobr>О товаре</nobr>
-                            </a>
-                        </li>
-                        
                     </ul>
 
                 </div>
                 <div class="header__btns">
 
-                    <a href="#myCall" class="popup-link"><span class="icon-phone"></span>Заказать звонок</a>
+                    <a href="#myCall" class="popup-link"><span class="icon-phone"></span>Замовити дзвінок</a>
                     <a href="#myModal" class="popup-link btn-cart">
                         <span class="icon-cart"></span>
                         <span id="count-goods">0</span>
@@ -133,8 +159,8 @@
     <div class="start-background" id="start">
         <div class="start_content container">
             <div class="title__wrapper">
-                <span class="title">Что такое
-                    <span class="title title-style_v1">картины по номерам?</span>
+                <span class="title">Що таке
+                    <span class="title title-style_v1">картини за номерами?</span>
                 </span>
             </div>
             <div class="start__cont">
@@ -142,31 +168,34 @@
                     <img src="images/aboutProduct.png" alt="">
                 </div>
                 <span class="start__text">
-                    <p class="start__text-p1">Картины по номерам относятся к категории товаров
-                        <span style="font-style: italic; font-weight: 500;">DIY</span>, что значит
+                    <p class="start__text-p1">Картини за номерами відносяться до категорії товарів
+                        <span style="font-style: italic; font-weight: 500;">DIY</span>, що означає
                         "<span style="font-style: italic;">Do it yourself</span>
                         "
-                        ("Сделай
+                        ("Зроби
                         сам").
                     </p>
 
-                    <p class="start__text-p2">Раскрашивание картин по номерам — это <span
-                            style="font-style: italic; font-weight: 500;">уникальная
-                            возможность для
-                            каждого</span>
-                        почувствовать
-                        себя
-                        художником,
-                        <span style="font-weight: 500; font-style: italic;">создавая шедевр собственными
+                    <p class="start__text-p2">Розмальовувати картини за номерами - це 
+                        <span
+                            style="font-style: italic; font-weight: 500;">унікальна
+                            можливість для
+                            кожного</span>
+                            відчути
+                            себе
+                            художником,
+                        <span style="font-weight: 500; font-style: italic;">створюючи шедевр власними
                             руками.</span>
                     </p>
 
-                    <p class="start__text-p3">В последние <span style="font-weight: 500; font-style: italic;">5 лет
-                            популярность</span> таких картин только возрастает, они все
-                        больше
-                        пользуются
-                        спросом
-                        на современном рынке.</p>
+                    <p class="start__text-p3">В останні
+                        <span style="font-weight: 500; font-style: italic;">5 років
+                            популярність</span> таких картин тільки зростає, вони все
+                            більше
+                            користуються
+                            попитом
+                            на сучасному ринку.
+                    </p>
                 </span>
             </div>
 
@@ -185,16 +214,61 @@
                             <div class="bonus-title-wrapper">
                 
                                 <div class="bonus-text">
-                                    <span class="bonus-span2_v1">
-                                        Акция!
-                                        <span>Н</span><span class="bsl">а каждую
+                                    <span class="bonus-span2_v1" style="text-align: center;  color: crimson; font-weight: bold;">
+                                        Передноворічна<br>
+                                    </span>
+
+                                    <span class="bonus-span2_v1" style="text-align: center; margin-top: 5px; color: crimson; font-weight: bold;">
+                                        Акція!<br>
+                                        <span style="font-size: 22px; font-weight:400;">Н</span><span class="bsl" style="font-weight:400;">а весь
+                                        товар
                                         </span>
                                     </span>
-                                    <span class="bonus-span2_v2">
-                                        третью <span class="bsl">раскарску</span>
-                                    </span>
                                     <span class="bonus-span2_v3">
-                                        скидка 30%
+                                        - 30%
+                                    </span>
+                                </div>
+                
+                            </div>
+                        </div>
+                
+                        <div id="countdown3" class="countdown">
+                            <div class="countdown-number">
+                                <span class="days countdown-time"></span>
+                                <span class="countdown-text">Днів</span>
+                            </div>
+                            <div class="countdown-number">
+                                <span class="hours countdown-time"></span>
+                                <span class="countdown-text">Годин</span>
+                            </div>
+                            <div class="countdown-number">
+                                <span class="minutes countdown-time"></span>
+                                <span class="countdown-text">Хвилин</span>
+                            </div>
+                            <div class="countdown-number">
+                                <span class="seconds countdown-time"></span>
+                                <span class="countdown-text">Секунд</span>
+                            </div>
+                        </div>
+                
+                    </div>
+
+                    <div class="mySlides fade bonus-item">
+
+                        <div class="bonus-title">
+                            <div class="bonus-title-wrapper">
+                
+                                <div class="bonus-text">
+                                    <span class="bonus-span2_v1" style="color:white">
+                                        Акція!
+                                         <span>Н</span><span class="bsl">а кожну
+                                         </span>
+                                     </span>
+                                     <span class="bonus-span2_v2" >
+                                         третю <span class="bsl">розмальовку</span>
+                                     </span>
+                                     <span class="bonus-span2_v3" style="color:white">
+                                         знижка 20%
                                     </span>
                                 </div>
                 
@@ -204,15 +278,15 @@
                         <div id="countdown1" class="countdown">
                             <div class="countdown-number">
                                 <span class="days countdown-time"></span>
-                                <span class="countdown-text">Дней</span>
+                                <span class="countdown-text">Днів</span>
                             </div>
                             <div class="countdown-number">
                                 <span class="hours countdown-time"></span>
-                                <span class="countdown-text">Часов</span>
+                                <span class="countdown-text">Годин</span>
                             </div>
                             <div class="countdown-number">
                                 <span class="minutes countdown-time"></span>
-                                <span class="countdown-text">Минут</span>
+                                <span class="countdown-text">Хвилин</span>
                             </div>
                             <div class="countdown-number">
                                 <span class="seconds countdown-time"></span>
@@ -227,18 +301,18 @@
                         <div class="bonus-title">
                             <div class="bonus-title-wrapper">
                                 <h2 class="bonus-text">
-                                    <span class="bonus-span1_v1">
-                                        Закажи на 1000<span class="bsl">грн</span>
-                                    </span>
-                                    <span class="bsl">
-                                        и
-                                        получи
-                                    </span>
-                                    <span class="bonus-span1_v2">
-                                        Бесплатную
-                                    </span>
-                                    <span class="bsl">
-                                        доставку!
+                                    <span class="bonus-span1_v1" style="color:white">
+                                        <span>Замов на</span> 1000<span class="bsl" style="color:white">грн</span>
+                                     </span>
+                                     <span class="bsl">
+                                         і
+                                         отримай
+                                     </span>
+                                     <span class="bonus-span1_v2" style="color: white;">
+                                         Безкоштовну
+                                     </span>
+                                     <span class="bsl">
+                                         доставку!
                                     </span>
                                 </h2>
                             </div>
@@ -247,15 +321,15 @@
                         <div id="countdown2" class="countdown">
                             <div class="countdown-number">
                                 <span class="days countdown-time"></span>
-                                <span class="countdown-text">Дней</span>
+                                <span class="countdown-text">Днів</span>
                             </div>
                             <div class="countdown-number">
                                 <span class="hours countdown-time"></span>
-                                <span class="countdown-text">Часов</span>
+                                <span class="countdown-text">Годин</span>
                             </div>
                             <div class="countdown-number">
                                 <span class="minutes countdown-time"></span>
-                                <span class="countdown-text">Минут</span>
+                                <span class="countdown-text">Хвилин</span>
                             </div>
                             <div class="countdown-number">
                                 <span class="seconds countdown-time"></span>
@@ -268,7 +342,7 @@
                 </div>
 
                 <div class="bonus-link__container">
-                    <a href="#catalog" class="bonus-link">Использовать Бонус</a>
+                    <a href="#catalog" class="bonus-link">Використати Бонус</a>
                 </div>
 
             </div>
@@ -281,8 +355,8 @@
                     <div class="about_content about_content_v2">
 
                         <div class="title__wrapper">
-                            <span class="title">Картины по номерам -
-                                <span class="title title-style_v1">ЭТО?</span>
+                            <span class="title">Картини за номерами -
+                                <span class="title title-style_v1">ЦЕ?</span>
                             </span>
                         </div>
                         <div class="about__cont">
@@ -293,7 +367,7 @@
                                         <img src="images/dream.png" alt="">
                                     </div>
                                     <div class="about__item-text">
-                                        <span> Реализация мечты — нарисовать картину</span>
+                                        <span> Реалізація мрії – намалювати картину</span>
                                     </div>
                                 </div>
                                 <div class="about__item">
@@ -301,7 +375,7 @@
                                         <img src="images/motive.png" alt="">
                                     </div>
                                     <div class="about__item-text">
-                                        <span>Восторг от собственного результата</span>
+                                        <span>Захоплення від результату</span>
                                     </div>
                                 </div>
                                 <div class="about__item">
@@ -309,7 +383,7 @@
                                         <img src="images/unique.png" alt="">
                                     </div>
                                     <div class="about__item-text">
-                                        <span>Необычный вид творчества</span>
+                                        <span>Незвичайний вид творчості</span>
 
                                     </div>
                                 </div>
@@ -318,7 +392,7 @@
                                         <img src="images/relax.png" alt="">
                                     </div>
                                     <div class="about__item-text">
-                                        <span>Способ релаксации</span>
+                                        <span>Спосіб релаксації</span>
                                     </div>
                                 </div>
                                 <div class="about__item">
@@ -326,7 +400,7 @@
                                         <img src="images/original.png" alt="">
                                     </div>
                                     <div class="about__item-text">
-                                        <span> Оригинальный предмет интерьера</span>
+                                        <span>Оригінальний предмет інтер'єру</span>
 
                                     </div>
                                 </div>
@@ -335,9 +409,9 @@
                                         <img src="images/present.png" alt="">
                                     </div>
                                     <div class="about__item-text">
-                                        <span>Отличный подарок,</span>
-                                        <span>которому будет рад и </span>
-                                        <span>ребёнок, и взрослый</span>
+                                        <span>Відмінний подарунок,</span>
+                                        <span>якому будуть раді </span>
+                                        <span>діти та дорослі</span>
                                     </div>
                                 </div>
 
@@ -348,7 +422,7 @@
                     <div class="about_content about_content_v3">
                         <div class="title__wrapper">
                             <span class="title">
-                                В комплект входит:
+                                В комплект входить:
                             </span>
                         </div>
                         <div class="about__cont">
@@ -356,7 +430,7 @@
                                 <div class="about__inculde-item">
                                     <div class="include-item-text">
                                         <span>
-                                            Подарочная упаковка
+                                            Подарункова упаковка
                                         </span>
                                     </div>
                                     <div class="include-item-image-wrapper">
@@ -366,7 +440,7 @@
                                 <div class="about__inculde-item">
                                     <div class="include-item-text">
                                         <span>
-                                            Кисти
+                                            Пензлики
                                         </span>
                                     </div>
                                     <div class="include-item-image-wrapper">
@@ -376,7 +450,7 @@
                                 <div class="about__inculde-item">
                                     <div class="include-item-text">
                                         <span>
-                                            Акриловые краски
+                                            Акрилові фарби
                                         </span>
                                     </div>
                                     <div class="include-item-image-wrapper">
@@ -385,8 +459,8 @@
                                 </div>
                                 <div class="about__inculde-item">
                                     <div class="include-item-text">
-                                        <span>Натуральный холст,</span>
-                                        <span>натянутый на деревянную</span>
+                                        <span>Натуральне полотно,</span>
+                                        <span>натягнутие на дерев'яну</span>
                                         <span>раму</span>
                                     </div>
                                     <div class="include-item-image-wrapper">
@@ -395,7 +469,7 @@
                                 </div>
                                 <div class="about__inculde-item">
                                     <div class="include-item-text">
-                                        <span>Настенное крепление</span>
+                                        <span>Настінне кріплення</span>
 
                                     </div>
                                     <div class="include-item-image-wrapper">
@@ -404,7 +478,7 @@
                                 </div>
                                 <div class="about__inculde-item">
                                     <div class="include-item-text">
-                                        <span>Подробная инструкция</span>
+                                        <span>Докладна інструкція</span>
                                     </div>
                                     <div class="include-item-image-wrapper">
                                         <img src="images/item6.png" alt="">
@@ -426,8 +500,8 @@
             <div class="container">
                 <div class="title__wrapper">
 
-                    <span class="title">Почему стоит покупать
-                        <span class="title title-style_v1">именно у
+                    <span class="title">Чому варто купувати
+                        <span class="title title-style_v1">саме у
                             нас?</span>
                     </span>
 
@@ -439,11 +513,11 @@
                         <div class="li-cont">
                             <span class="li-title">
                                 Широкий
-                                ассортимент
+                                асортимент
                             </span>
                             <p class="li-info">
-                                Большой выбор
-                                картин самых разных брэндов на любой вкус
+                                Великий вибір
+                                картин най&shy;різноманітніших брендів на будь-який смак
                             </p>
                         </div>
 
@@ -453,12 +527,12 @@
                         <span class="icon icon-fast"></span>
                         <div class="li-cont">
                             <span class="li-title">
-                                Лучшая
-                                доставка
-                            </span>
-                            <p class="li-info">
-                                Гарантируем
-                                быструю и качественную доставку по всей Украине
+                                Найкраща
+                                 доставка
+                             </span>
+                             <p class="li-info">
+                                 Гарантуємо
+                                 найшвидшу та найякіснішу доставку по всій Україні
                             </p>
                         </div>
                     </li>
@@ -467,12 +541,12 @@
                         <div class="li-cont">
                             <span class="li-title">
                                 У нас
-                                приятно
-                                <br>покупать
+                                приємно
+                                <br>купувати
                             </span>
                             <p class="li-info">
-                                Регулярные скидки
-                                и акции
+                                Регулярні знижки
+                                та акції
                             </p>
                         </div>
 
@@ -481,12 +555,12 @@
                         <span class="icon icon-handshake"></span>
                         <div class="li-cont">
                             <span class="li-title">
-                                Качественное
-                                обслуживание
+                                Якісне
+                                обслуговування
                             </span>
                             <p class="li-info">
-                                Гарантируем,
-                                что вы получите свой заказ в целом состояние<br>(Гарантия 14 дней).
+                                Гарантуємо,
+                                що ви отримаєте своє замовлення у цілому стані<br>(Гарантія 14 днів).
                             </p>
                         </div>
 
@@ -503,7 +577,7 @@
                 <h1 class="sect-title">Каталог</h1>
                 <div id="Ssl" class="Ssl _load-more">
                     <div id="Ssl_post" class="_loading-icon"></div>
-                    <button onclick="getContent()" class="Ssl_load-more lm-hide">Загрузить ещё</button>
+                    <button onclick="getContent()" class="Ssl_load-more lm-hide">Завантажити ще...</button>
                 </div>
             </div>
 
@@ -514,32 +588,32 @@
                 <div class="form-wrapper">
                     <div class="form-container buy__contact">
                         <h2 class="title__wrapper">
-                            <span class="title form-title">Конкакты</span>
+                            <span class="title form-title">Контакти</span>
                         </h2>
                         <div class="buy__contact-main">
                             <div class="contact-item">
                                 <span class="contact-item-title">
                                     телефон
                                 </span>
-                                <span class="contact-item-text">
-                                    +38 (ххх) ххх-хх-хх
+                                <span class="contact-item-text" style="color:#7d7d7d">
+                                    +38 (093) 448-24-57
                                 </span>
                             </div>
                             <div class="contact-item">
                                 <span class="contact-item-title">
-                                    почта
+                                    пошта
                                 </span>
                                 <span class="contact-item-text">
-                                    123@gmailc.com
+                                    manager.ua.online@gmail.com
                                 </span>
                             </div>
                             <div class="contact-item">
                                 <span class="contact-item-title">
-                                    график работы
+                                    графік роботи
                                 </span>
                                 <span class="contact-item-text timetable">
                                     <span>ПН - ПТ 9:00 - 21:00</span>
-                                    <span>СБ - ВС 10:00 - 20:00</span>
+                                    <span>СБ - НД 10:00 - 20:00</span>
                                 </span>
                             </div>
                         </div>
@@ -547,13 +621,13 @@
 
                     <div class="form-container buy__form">
                         <h2 class="title__wrapper">
-                            <span class="title form-title">Отправить заявку</span>
+                            <span class="title form-title">Відправити заявку</span>
                         </h2>
                         <form method="post" class="-form buy-form">
                             <div class="-form__field">
                                 <input type="text" class="-inp _req _ch" id="firstName" name="name"
-                                    placeholder="Ваше имя">
-                                <label for="firstName" class="-label icon-user-alt">Имя*:</label>
+                                    placeholder="Ваше Ім'я">
+                                <label for="firstName" class="-label icon-user-alt">Ім'я*:</label>
                             </div>
                             <div class="-form__field">
                                 <input type="text" class="-inp _req _phone" id="phone" name="phone"
@@ -562,35 +636,32 @@
                             </div>
                             <div class="-form__field">
                                 <input type="text" class="-inp _email  _ch" id="email" name="email"
-                                    placeholder="Ваш почта">
-                                <label for="email" class="-label icon-mailbox">Ваша почта:</label>
+                                    placeholder="Ваш пошта">
+                                <label for="email" class="-label icon-mailbox">Ваша пошта:</label>
                             </div>
                             <div class="-form__field">
                                 <textarea type="text" class="-inp" id="message" name="message"
-                                    placeholder="Ваше сообщение"></textarea>
-                                <label for="message" class="-label icon-envelope">Ваше сообщение:</label>
+                                    placeholder="Ваше повідомлення"></textarea>
+                                <label for="message" class="-label icon-envelope">Ваше повідомлення:</label>
                             </div>
                             <div class="-form__field">
                                 <div class="checkbox">
                                     <input type="checkbox" name="agreement" id="agreement" class="checkbox__input _req">
                                     <label for="agreement" class="checkbox__label">
-                                        <span>Я даю своё согласие на
-                                            обработку персональных данных в соответствии с
-                                            <a href="privacy.html">Условиями</a>*</span>
+                                        <span>Я даю свою згоду на
+                                            обробку персональних даних відповідно за
+                                            <a href="privacy.html">Умовами</a>*</span>
                                     </label>
                                 </div>
                             </div>
                             <input type="hidden" name="q_Fd4F$*123fgE$FD4" value="форма">
-                            <button class="-button">Отправить</button>
+                            <button class="-button">Відправити</button>
                         </form>
                     </div>
 
                 </div>
             </div>
         </section>
-
-
-
 
     </main>
 
@@ -603,17 +674,16 @@
                     <a class="icon-instagram"></a>
                     <a class="icon-facebook"></a>
                 </div>
-                <span>© 2019-2021 this.ua</span>
+                <span>© 2019-2022 paint-by-number.store</span>
                 <div>
-                    <span><a href="privacy.html">Политика конфиденциальности</a></span>
+                    <span><a href="privacy.html">Політика конфіденційності</a></span>
                     <span>|</span>
-                    <span><a href="return.html">Политика возврата</a></span>
+                    <span><a href="return.html">Політика повернення</a></span>
                 </div>
                 <span>ФОП Стремянков ИНН 3412923952</span>
             </div>
         </div>
     </footer>
-
 
     <div id="myCall" class="popup">
         <div class="popup__body">
@@ -623,8 +693,8 @@
                 <div class="call-container">
                     <form method="post" class="-form call-form">
                         <div class="-form__field">
-                            <input type="text" class="-inp _req _ch" id="firstName2" name="name" placeholder="Ваше имя">
-                            <label for="firstName2" class="-label icon-user-alt">Имя*:</label>
+                            <input type="text" class="-inp _req _ch" id="firstName2" name="name" placeholder="Ваше Ім'я">
+                            <label for="firstName2" class="-label icon-user-alt">Ім'я*:</label>
                         </div>
                         <div class="-form__field">
                             <input type="text" class="-inp _req _phone" id="phone2" name="phone"
@@ -635,14 +705,14 @@
                             <div class="checkbox">
                                 <input type="checkbox" name="agreement" id="agreement2" class="checkbox__input _req">
                                 <label for="agreement2" class="checkbox__label">
-                                    <span>Я даю своё согласие на
-                                        обработку персональных данных в соответствии с
-                                        <a href="privacy.html">Условиями</a>*</span>
+                                    <span>Я даю свою згоду на
+                                        обробку персональних даних відповідно за
+                                        <a href="privacy.html">Умовами</a>*</span>
                                 </label>
                             </div>
                         </div>
                         <input type="hidden" name="q_Fd4F$*123fgE$FD4" value="перезвон">
-                        <button class="-button">Отправить</button>
+                        <button class="-button">Відправити</button>
                     </form>
                 </div>
 
@@ -661,12 +731,12 @@
                 <div class="cost_btn">
                     <div class="cart-sum-container">
                         <div class="cart-sum">
-                            <span>Общая стоимость:</span>
+                            <span>Загальна вартість:</span>
                             <span id="total-sum"></span>
                         </div>
                     </div>
                     <div class="cart-btns-buy">
-                        <a href="#myBuy" class="-button popup-link ">Заказать</a>
+                        <a href="#myBuy" class="-button popup-link ">Замовити</a>
                     </div>
                 </div>
             </div>
@@ -681,8 +751,8 @@
                 <div class="cart_buy-container">
                     <form method="post" class="-form cart-form">
                         <div class="-form__field">
-                            <input type="text" class="-inp _req _ch" id="firstName3" name="name" placeholder="Ваше имя">
-                            <label for="firstName3" class="-label icon-user-alt">Имя*:</label>
+                            <input type="text" class="-inp _req _ch" id="firstName3" name="name" placeholder="Ваше Ім'я">
+                            <label for="firstName3" class="-label icon-user-alt">Ім'я*:</label>
                         </div>
                         <div class="-form__field">
                             <input type="text" class="-inp _req _phone" id="phone3" name="phone"
@@ -691,22 +761,24 @@
                         </div>
                         <div class="-form__field">
                             <textarea type="text" class="-inp _req _adress" id="adress" name="adress"
-                                placeholder="Адресс доставки"></textarea>
-                            <label for="adress" class="-label icon-phone-rotaty">Адресс доставки*:</label>
+                                placeholder="Адреса доставки"></textarea>
+                            <label for="adress" class="-label icon-phone-rotaty">Адреса доставки*:</label>
                         </div>
                         <div class="-form__field">
                             <div class="checkbox">
                                 <input type="checkbox" name="agreement" id="agreement3" class="checkbox__input _req">
                                 <label for="agreement3" class="checkbox__label">
-                                    <span>Я даю своё согласие на
-                                        обработку персональных данных в соответствии с
-                                        <a href="privacy.html">Условиями</a>*</span>
+                                    <span>Я даю свою згоду на
+                                        обробку персональних даних відповідно за
+                                        <a href="privacy.html">Умовами</a>*</span>
                                 </label>
                             </div>
                         </div>
                         <input type="hidden" name="q_Fd4F$*123fgE$FD4" value="заказали товар">
                         <input type="hidden" name="U6JAqGNpt7C1" id="U6JAqGNpt7C1" value="">
-                        <button class="-button">Купить</button>
+                        <input type="hidden" name="2FD_dsgk23F3" id="2FD_dsgk23F3" value="">
+                        <input type="hidden" name="SDLa_1f23GD1" id="SDLa_1f23GD1" value="">
+                        <button class="-button">Купити</button>
                     </form>
                 </div>
             </div>
