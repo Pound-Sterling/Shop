@@ -1,4 +1,3 @@
-# shop Ssl
+# shop
 
-Вот сайт:
 https://paint-by-number.store/
